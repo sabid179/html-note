@@ -1,0 +1,1988 @@
+{
+  "a": {
+    "name": "a",
+    "description": "The anchor element creates hyperlinks to web pages, files, email addresses, locations in the same page, or anything else a URL can address. Content within each anchor should indicate the link's destination.",
+    "example": "<a href=\"https://example.com\">Visit Example</a>\n<a href=\"mailto:email@example.com\">Send Email</a>\n<a href=\"tel:+1234567890\">Call Us</a>",
+    "attributes": [
+      {
+        "name": "href",
+        "description": "Specifies the URL or destination that the link points to. Can be a web address, email (mailto:), phone number (tel:), or anchor link (#section).",
+        "example": "<a href=\"https://example.com\">Link</a>"
+      },
+      {
+        "name": "target",
+        "description": "Defines where to open the linked document. Values: _blank (new tab), _self (same frame), _parent (parent frame), _top (full window).",
+        "example": "<a href=\"page.html\" target=\"_blank\">Open in new tab</a>"
+      },
+      {
+        "name": "download",
+        "description": "Prompts the user to download the linked resource instead of navigating to it. The value suggests the filename.",
+        "example": "<a href=\"file.pdf\" download=\"document.pdf\">Download PDF</a>"
+      },
+      {
+        "name": "rel",
+        "description": "Specifies the relationship between the current document and the linked document. Common values: nofollow, noopener, noreferrer, external.",
+        "example": "<a href=\"external.html\" rel=\"noopener noreferrer\">External Link</a>"
+      },
+      {
+        "name": "type",
+        "description": "Hints at the linked resource's MIME type (e.g., text/html, application/pdf) to help browsers handle it appropriately.",
+        "example": "<a href=\"doc.pdf\" type=\"application/pdf\">PDF Document</a>"
+      },
+      {
+        "name": "hreflang",
+        "description": "Indicates the language of the linked document using language codes (e.g., en, es, fr).",
+        "example": "<a href=\"page-es.html\" hreflang=\"es\">Spanish Version</a>"
+      },
+      {
+        "name": "ping",
+        "description": "Contains a space-separated list of URLs to be notified when the user follows the link (used for tracking).",
+        "example": "<a href=\"page.html\" ping=\"https://analytics.com/track\">Link</a>"
+      },
+      {
+        "name": "referrerpolicy",
+        "description": "Controls how much referrer information is sent when following the link. Values include: no-referrer, origin, strict-origin.",
+        "example": "<a href=\"external.html\" referrerpolicy=\"no-referrer\">Private Link</a>"
+      }
+    ]
+  },
+  "abbr": {
+    "name": "abbr",
+    "description": "The abbreviation element represents an abbreviation or acronym. Use the title attribute to provide the full description of the abbreviation, which browsers and assistive technologies may present as a tooltip.",
+    "example": "<p>You can use <abbr title=\"Cascading Style Sheets\">CSS</abbr> to style your pages.</p>",
+    "attributes": [
+      {
+        "name": "title",
+        "description": "Provides the full expansion or description of the abbreviation. Displayed as a tooltip when users hover over the element.",
+        "example": "<abbr title=\"HyperText Markup Language\">HTML</abbr>"
+      }
+    ]
+  },
+  "acronym": {
+    "name": "acronym",
+    "description": "The acronym element was used to define acronyms. This element is deprecated in HTML5 and should not be used. Use the abbr element instead.",
+    "example": "<acronym title=\"World Wide Web\">WWW</acronym>",
+    "attributes": [
+      {
+        "name": "title",
+        "description": "Provides the full expansion of the acronym. Shows as a tooltip on hover.",
+        "example": "<acronym title=\"As Soon As Possible\">ASAP</acronym>"
+      }
+    ]
+  },
+  "address": {
+    "name": "address",
+    "description": "The address element indicates contact information for a person or organization. It can include any type of contact information, such as physical address, email, phone number, or social media links.",
+    "example": "<address>\n  Written by <a href=\"mailto:john@example.com\">John Doe</a><br>\n  Visit us at: 123 Main St, City, Country\n</address>",
+    "attributes": []
+  },
+  "area": {
+    "name": "area",
+    "description": "The area element defines clickable regions within an image map. It is always nested inside a map element and works with the usemap attribute on img to create interactive image areas.",
+    "example": "<map name=\"workmap\">\n  <area shape=\"rect\" coords=\"34,44,270,350\" href=\"computer.html\" alt=\"Computer\">\n  <area shape=\"circle\" coords=\"337,300,44\" href=\"phone.html\" alt=\"Phone\">\n</map>\n<img src=\"workplace.jpg\" usemap=\"#workmap\">",
+    "attributes": [
+      {
+        "name": "alt",
+        "description": "Alternative text for the clickable area, important for accessibility and screen readers.",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"page.html\" alt=\"Click here\">"
+      },
+      {
+        "name": "coords",
+        "description": "Defines the coordinates of the clickable area. Format depends on shape: rect (x1,y1,x2,y2), circle (x,y,radius), poly (x1,y1,x2,y2,...).",
+        "example": "<area shape=\"circle\" coords=\"100,100,50\" href=\"page.html\">"
+      },
+      {
+        "name": "shape",
+        "description": "Specifies the shape of the clickable area. Values: rect (rectangle), circle, poly (polygon), default (entire image).",
+        "example": "<area shape=\"poly\" coords=\"10,10,50,10,30,40\" href=\"page.html\">"
+      },
+      {
+        "name": "href",
+        "description": "The URL that the area links to when clicked.",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"https://example.com\">"
+      },
+      {
+        "name": "target",
+        "description": "Specifies where to open the linked URL. Values: _blank, _self, _parent, _top.",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"page.html\" target=\"_blank\">"
+      },
+      {
+        "name": "download",
+        "description": "Prompts to download the linked resource rather than navigate to it.",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"file.pdf\" download>"
+      },
+      {
+        "name": "ping",
+        "description": "URLs to notify when the area is clicked, used for tracking purposes.",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"page.html\" ping=\"https://tracker.com\">"
+      },
+      {
+        "name": "rel",
+        "description": "Relationship between current document and linked URL (e.g., nofollow, noopener).",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"page.html\" rel=\"nofollow\">"
+      },
+      {
+        "name": "referrerpolicy",
+        "description": "Controls referrer information sent when the link is followed.",
+        "example": "<area shape=\"rect\" coords=\"0,0,100,100\" href=\"page.html\" referrerpolicy=\"no-referrer\">"
+      }
+    ]
+  },
+  "article": {
+    "name": "article",
+    "description": "The article element represents a self-contained composition in a document, page, or site, which is intended to be independently distributable or reusable. Examples include blog posts, news articles, forum posts, or product cards.",
+    "example": "<article>\n  <h2>Article Title</h2>\n  <p>Article content goes here...</p>\n  <footer>Published on <time>2024-01-15</time></footer>\n</article>",
+    "attributes": []
+  },
+  "aside": {
+    "name": "aside",
+    "description": "The aside element represents content that is tangentially related to the content around it. This could be sidebars, pull quotes, advertising, or groups of navigation elements. The content should be separable from the main content.",
+    "example": "<aside>\n  <h4>Related Articles</h4>\n  <ul>\n    <li><a href=\"#\">Link 1</a></li>\n    <li><a href=\"#\">Link 2</a></li>\n  </ul>\n</aside>",
+    "attributes": []
+  },
+  "audio": {
+    "name": "audio",
+    "description": "The audio element embeds sound content in documents. It can contain one or more audio sources using the src attribute or source elements. The browser will choose the most suitable source.",
+    "example": "<audio controls>\n  <source src=\"audio.mp3\" type=\"audio/mpeg\">\n  <source src=\"audio.ogg\" type=\"audio/ogg\">\n  Your browser does not support the audio element.\n</audio>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "Specifies the URL of the audio file to play.",
+        "example": "<audio src=\"music.mp3\" controls></audio>"
+      },
+      {
+        "name": "controls",
+        "description": "Displays the browser's default audio controls (play, pause, volume, etc.). Without this, audio is invisible.",
+        "example": "<audio src=\"music.mp3\" controls></audio>"
+      },
+      {
+        "name": "autoplay",
+        "description": "Makes the audio start playing automatically when the page loads. Note: Most browsers restrict autoplay without user interaction.",
+        "example": "<audio src=\"music.mp3\" autoplay muted></audio>"
+      },
+      {
+        "name": "loop",
+        "description": "Makes the audio repeat continuously from the beginning after it ends.",
+        "example": "<audio src=\"bgmusic.mp3\" controls loop></audio>"
+      },
+      {
+        "name": "muted",
+        "description": "Starts the audio with sound muted. Often required for autoplay to work in modern browsers.",
+        "example": "<audio src=\"music.mp3\" controls muted></audio>"
+      },
+      {
+        "name": "preload",
+        "description": "Hints how much audio to load before playing. Values: none (load nothing), metadata (load only metadata), auto (load entire file).",
+        "example": "<audio src=\"music.mp3\" controls preload=\"metadata\"></audio>"
+      },
+      {
+        "name": "crossorigin",
+        "description": "Configures CORS requests for audio from other domains. Values: anonymous, use-credentials.",
+        "example": "<audio src=\"https://cdn.com/music.mp3\" controls crossorigin=\"anonymous\"></audio>"
+      }
+    ]
+  },
+  "b": {
+    "name": "b",
+    "description": "The bold element draws attention to text without conveying extra importance. It is used for keywords, product names, or other text that should be stylistically offset from normal text without added emphasis.",
+    "example": "<p>This is <b>bold text</b> in a paragraph.</p>",
+    "attributes": []
+  },
+  "base": {
+    "name": "base",
+    "description": "The base element specifies the base URL and target for all relative URLs in a document. There can only be one base element per document, and it must be placed inside the head element.",
+    "example": "<head>\n  <base href=\"https://example.com/\" target=\"_blank\">\n</head>",
+    "attributes": [
+      {
+        "name": "href",
+        "description": "Sets the base URL for all relative URLs in the document. All relative links will be resolved against this URL.",
+        "example": "<base href=\"https://example.com/docs/\">"
+      },
+      {
+        "name": "target",
+        "description": "Sets the default target for all links in the document (e.g., _blank to open all links in new tabs).",
+        "example": "<base target=\"_blank\">"
+      }
+    ]
+  },
+  "bdi": {
+    "name": "bdi",
+    "description": "The bidirectional isolate element isolates text that might be formatted in a different direction from surrounding text. This is useful when embedding user-generated content with unknown directionality.",
+    "example": "<p>User <bdi>إيان</bdi>: 90 points</p>",
+    "attributes": []
+  },
+  "bdo": {
+    "name": "bdo",
+    "description": "The bidirectional text override element overrides the current text directionality, forcing text to be rendered in a specific direction regardless of the Unicode bidirectional algorithm.",
+    "example": "<p><bdo dir=\"rtl\">This text will go right to left</bdo></p>",
+    "attributes": [
+      {
+        "name": "dir",
+        "description": "Specifies the text direction. Values: ltr (left-to-right) or rtl (right-to-left). Required attribute for bdo element.",
+        "example": "<bdo dir=\"rtl\">This text goes right to left</bdo>"
+      }
+    ]
+  },
+  "big": {
+    "name": "big",
+    "description": "The big element was used to make text one size larger. This element is deprecated in HTML5 and should not be used. Use CSS font-size property instead.",
+    "example": "<p>This is <big>bigger text</big></p>",
+    "attributes": []
+  },
+  "blockquote": {
+    "name": "blockquote",
+    "description": "The block quotation element indicates extended quotations from another source. The cite attribute can specify the source URL, and a citation can be provided using the cite element or footer element.",
+    "example": "<blockquote cite=\"https://example.com/quote\">\n  <p>This is a quoted text from another source.</p>\n  <footer>— <cite>Author Name</cite></footer>\n</blockquote>",
+    "attributes": [
+      {
+        "name": "cite",
+        "description": "Specifies the URL of the source from which the quotation is taken. This is not displayed but provides metadata about the quote's origin.",
+        "example": "<blockquote cite=\"https://example.com\"><p>Quoted text</p></blockquote>"
+      }
+    ]
+  },
+  "body": {
+    "name": "body",
+    "description": "The body element represents the content of an HTML document. There can only be one body element per document, and it contains all the visible content like text, images, videos, links, etc.",
+    "example": "<body>\n  <h1>Page Title</h1>\n  <p>Page content goes here.</p>\n</body>",
+    "attributes": []
+  },
+  "br": {
+    "name": "br",
+    "description": "The line break element produces a line break in text. It is useful for writing addresses or poems where line division is significant. Do not use br to create spacing between paragraphs; use CSS margin instead.",
+    "example": "<p>Line one<br>Line two<br>Line three</p>",
+    "attributes": []
+  },
+  "button": {
+    "name": "button",
+    "description": "The button element represents a clickable button that can be used to submit forms or trigger actions with JavaScript. Unlike input type button, it can contain HTML content like images or formatted text.",
+    "example": "<button type=\"button\" onclick=\"alert('Hello!')\">Click Me</button>\n<button type=\"submit\">Submit Form</button>",
+    "attributes": [
+      {
+        "name": "type",
+        "description": "Defines the button's behavior. Values: submit (submits form), reset (resets form), button (no default behavior, use with JavaScript).",
+        "example": "<button type=\"submit\">Submit</button>"
+      },
+      {
+        "name": "name",
+        "description": "The name of the button, which is sent with the form data when the button is used to submit a form.",
+        "example": "<button type=\"submit\" name=\"action\" value=\"save\">Save</button>"
+      },
+      {
+        "name": "value",
+        "description": "The value associated with the button's name when submitted with form data.",
+        "example": "<button type=\"submit\" name=\"action\" value=\"delete\">Delete</button>"
+      },
+      {
+        "name": "disabled",
+        "description": "Disables the button, making it unclickable and visually dimmed. Disabled buttons don't submit with forms.",
+        "example": "<button type=\"submit\" disabled>Submit</button>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the button with a form element by its ID, even if the button is not nested inside the form.",
+        "example": "<button type=\"submit\" form=\"myForm\">Submit</button>"
+      },
+      {
+        "name": "formaction",
+        "description": "Overrides the form's action attribute, specifying where to send form data when this button submits the form.",
+        "example": "<button type=\"submit\" formaction=\"/delete\">Delete</button>"
+      },
+      {
+        "name": "formmethod",
+        "description": "Overrides the form's method attribute. Values: get, post. Defines how to send form data.",
+        "example": "<button type=\"submit\" formmethod=\"post\">Submit</button>"
+      },
+      {
+        "name": "formtarget",
+        "description": "Overrides the form's target attribute, specifying where to display the response after form submission.",
+        "example": "<button type=\"submit\" formtarget=\"_blank\">Open in new tab</button>"
+      },
+      {
+        "name": "formenctype",
+        "description": "Overrides the form's enctype attribute, specifying how form data should be encoded before sending.",
+        "example": "<button type=\"submit\" formenctype=\"multipart/form-data\">Upload</button>"
+      },
+      {
+        "name": "formnovalidate",
+        "description": "Overrides the form's novalidate attribute, bypassing form validation when this button submits the form.",
+        "example": "<button type=\"submit\" formnovalidate>Save Draft</button>"
+      }
+    ]
+  },
+  "canvas": {
+    "name": "canvas",
+    "description": "The canvas element provides a drawing surface for graphics via JavaScript. It can be used to draw shapes, images, text, or create animations and games. The actual rendering is done using the Canvas API or WebGL.",
+    "example": "<canvas id=\"myCanvas\" width=\"200\" height=\"100\">\n  Your browser does not support canvas.\n</canvas>\n<script>\n  const canvas = document.getElementById('myCanvas');\n  const ctx = canvas.getContext('2d');\n  ctx.fillRect(20, 20, 150, 50);\n</script>",
+    "attributes": [
+      {
+        "name": "width",
+        "description": "The width of the canvas in pixels. Default is 300. Note: Set this via HTML attribute, not CSS, to avoid distortion.",
+        "example": "<canvas width=\"500\" height=\"300\"></canvas>"
+      },
+      {
+        "name": "height",
+        "description": "The height of the canvas in pixels. Default is 150. Use the HTML attribute for proper rendering.",
+        "example": "<canvas width=\"500\" height=\"300\"></canvas>"
+      }
+    ]
+  },
+  "caption": {
+    "name": "caption",
+    "description": "The table caption element defines the title or caption for a table. It must be the first child of a table element and helps users quickly understand the purpose of the table.",
+    "example": "<table>\n  <caption>Monthly Sales Report</caption>\n  <tr>\n    <th>Month</th>\n    <th>Sales</th>\n  </tr>\n  <tr>\n    <td>January</td>\n    <td>$5000</td>\n  </tr>\n</table>",
+    "attributes": []
+  },
+  "center": {
+    "name": "center",
+    "description": "The center element was used to center-align text and content. This element is deprecated in HTML5 and should not be used. Use CSS text-align center instead.",
+    "example": "<center>This text is centered</center>",
+    "attributes": []
+  },
+  "cite": {
+    "name": "cite",
+    "description": "The citation element marks the title of a creative work such as books, articles, essays, poems, songs, films, TV shows, games, sculptures, or paintings. It should not be used for citing people.",
+    "example": "<p>My favorite book is <cite>The Great Gatsby</cite> by F. Scott Fitzgerald.</p>",
+    "attributes": []
+  },
+  "code": {
+    "name": "code",
+    "description": "The code element displays text as computer code. Browsers typically render code text in a monospace font. For multiple lines of code, wrap the code element inside a pre element.",
+    "example": "<p>Use the <code>console.log()</code> function to print output.</p>\n<pre><code>function hello() {\n  console.log('Hello World');\n}</code></pre>",
+    "attributes": []
+  },
+  "col": {
+    "name": "col",
+    "description": "The column element defines a column within a table and is used inside a colgroup element. It allows you to apply styling or attributes to entire columns rather than individual cells.",
+    "example": "<table>\n  <colgroup>\n    <col style=\"background-color: yellow\">\n    <col span=\"2\" style=\"background-color: lightblue\">\n  </colgroup>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n    <td>Data 3</td>\n  </tr>\n</table>",
+    "attributes": [
+      {
+        "name": "span",
+        "description": "Specifies the number of consecutive columns this col element represents. Default is 1. Use to apply styles to multiple columns at once.",
+        "example": "<col span=\"2\" style=\"background-color: yellow\">"
+      }
+    ]
+  },
+  "colgroup": {
+    "name": "colgroup",
+    "description": "The column group element defines a group of columns in a table. It must be placed after any caption elements and before any table content. It is used to apply common styling to multiple columns.",
+    "example": "<table>\n  <colgroup>\n    <col style=\"background-color: #f0f0f0\">\n    <col span=\"2\" style=\"background-color: #e0e0e0\">\n  </colgroup>\n  <tr>\n    <th>Name</th>\n    <th>Age</th>\n    <th>City</th>\n  </tr>\n</table>",
+    "attributes": [
+      {
+        "name": "span",
+        "description": "Specifies the number of consecutive columns in the group. Only used when colgroup has no col children. Default is 1.",
+        "example": "<colgroup span=\"3\" style=\"background-color: yellow\"></colgroup>"
+      }
+    ]
+  },
+  "data": {
+    "name": "data",
+    "description": "The data element links content with a machine-readable translation. The value attribute provides the machine-readable value, while the element content shows the human-readable version.",
+    "example": "<p>Product ID: <data value=\"12345\">Laptop-XYZ</data></p>",
+    "attributes": [
+      {
+        "name": "value",
+        "description": "Contains the machine-readable format of the element's content. Useful for JavaScript processing or microdata while displaying human-friendly text.",
+        "example": "<data value=\"39.95\">$39.95</data>"
+      }
+    ]
+  },
+  "datalist": {
+    "name": "datalist",
+    "description": "The datalist element contains a set of option elements representing predefined options for an input element. It provides an autocomplete feature, suggesting values as the user types.",
+    "example": "<label for=\"browser\">Choose a browser:</label>\n<input list=\"browsers\" id=\"browser\" name=\"browser\">\n<datalist id=\"browsers\">\n  <option value=\"Chrome\">\n  <option value=\"Firefox\">\n  <option value=\"Safari\">\n  <option value=\"Edge\">\n</datalist>",
+    "attributes": []
+  },
+  "dd": {
+    "name": "dd",
+    "description": "The description details element provides the description, definition, or value for the preceding term (dt) in a description list (dl). Multiple dd elements can follow a single dt.",
+    "example": "<dl>\n  <dt>HTML</dt>\n  <dd>HyperText Markup Language</dd>\n  <dd>The standard markup language for web pages</dd>\n</dl>",
+    "attributes": []
+  },
+  "del": {
+    "name": "del",
+    "description": "The deleted text element represents text that has been deleted from a document. Browsers typically render it with a strikethrough. Use the ins element to show inserted text.",
+    "example": "<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>",
+    "attributes": [
+      {
+        "name": "cite",
+        "description": "URL that explains or provides context for the deletion. Links to a document explaining why the text was removed.",
+        "example": "<del cite=\"https://example.com/changes\">Old text</del>"
+      },
+      {
+        "name": "datetime",
+        "description": "The date and time when the deletion was made. Format: YYYY-MM-DDThh:mm:ssTZD (e.g., 2024-01-15T14:30:00Z).",
+        "example": "<del datetime=\"2024-01-15T14:30:00Z\">Removed text</del>"
+      }
+    ]
+  },
+  "details": {
+    "name": "details",
+    "description": "The details element creates a disclosure widget from which users can obtain additional information or controls. Only the summary is visible initially; clicking it reveals the hidden content.",
+    "example": "<details>\n  <summary>Click to expand</summary>\n  <p>This is the hidden content that appears when expanded.</p>\n</details>",
+    "attributes": [
+      {
+        "name": "open",
+        "description": "Boolean attribute that indicates whether the details are currently visible. When present, the widget is expanded by default.",
+        "example": "<details open><summary>Title</summary><p>Content</p></details>"
+      }
+    ]
+  },
+  "dfn": {
+    "name": "dfn",
+    "description": "The definition element marks the term being defined within the context of a definition phrase or sentence. The nearest ancestor paragraph, description list, or section is considered the definition.",
+    "example": "<p><dfn>HTML</dfn> is the standard markup language for creating web pages.</p>",
+    "attributes": []
+  },
+  "dialog": {
+    "name": "dialog",
+    "description": "The dialog element represents a dialog box or modal window. It can be shown using the show or showModal methods and closed with close. The open attribute makes it visible.",
+    "example": "<dialog id=\"myDialog\">\n  <p>This is a dialog window</p>\n  <button onclick=\"document.getElementById('myDialog').close()\">Close</button>\n</dialog>\n<button onclick=\"document.getElementById('myDialog').showModal()\">Open Dialog</button>",
+    "attributes": [
+      {
+        "name": "open",
+        "description": "Boolean attribute indicating the dialog is active and available for interaction. Usually controlled via JavaScript methods show() or showModal().",
+        "example": "<dialog open><p>Dialog content</p></dialog>"
+      }
+    ]
+  },
+  "dir": {
+    "name": "dir",
+    "description": "The directory element was used to create lists of directory titles. This element is deprecated in HTML5 and should not be used. Use ul instead.",
+    "example": "<dir>\n  <li>File 1</li>\n  <li>File 2</li>\n</dir>",
+    "attributes": []
+  },
+  "div": {
+    "name": "div",
+    "description": "The content division element is a generic container for flow content. It has no effect on content or layout until styled with CSS. Use it to group elements for styling purposes or as a JavaScript target.",
+    "example": "<div class=\"container\">\n  <h2>Section Title</h2>\n  <p>Section content here.</p>\n</div>",
+    "attributes": []
+  },
+  "dl": {
+    "name": "dl",
+    "description": "The description list element encloses a list of term-description pairs. Common uses include implementing a glossary, displaying metadata, or presenting key-value pairs.",
+    "example": "<dl>\n  <dt>Coffee</dt>\n  <dd>A hot beverage made from roasted coffee beans</dd>\n  <dt>Tea</dt>\n  <dd>An aromatic beverage prepared by pouring hot water over tea leaves</dd>\n</dl>",
+    "attributes": []
+  },
+  "dt": {
+    "name": "dt",
+    "description": "The description term element specifies a term in a description list (dl). It must be followed by one or more dd elements that provide the description or definition of the term.",
+    "example": "<dl>\n  <dt>HTML</dt>\n  <dd>HyperText Markup Language</dd>\n  <dt>CSS</dt>\n  <dd>Cascading Style Sheets</dd>\n</dl>",
+    "attributes": []
+  },
+  "em": {
+    "name": "em",
+    "description": "The emphasis element marks text that has stress emphasis. Screen readers will pronounce emphasized text with verbal stress. Browsers typically render it in italic, but you can change styling with CSS.",
+    "example": "<p>You <em>must</em> complete this task today.</p>",
+    "attributes": []
+  },
+  "embed": {
+    "name": "embed",
+    "description": "The embed element embeds external content such as multimedia, plugins, or interactive applications. For most content types, consider using img, video, audio, or iframe instead.",
+    "example": "<embed src=\"animation.swf\" width=\"400\" height=\"300\">",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "The URL of the resource to embed. Required attribute for the embed element.",
+        "example": "<embed src=\"video.swf\" type=\"application/x-shockwave-flash\">"
+      },
+      {
+        "name": "type",
+        "description": "The MIME type of the embedded content (e.g., application/pdf, video/mp4). Helps the browser choose the right plugin.",
+        "example": "<embed src=\"doc.pdf\" type=\"application/pdf\">"
+      },
+      {
+        "name": "width",
+        "description": "The width of the embedded content in pixels or percentage.",
+        "example": "<embed src=\"video.swf\" width=\"640\" height=\"480\">"
+      },
+      {
+        "name": "height",
+        "description": "The height of the embedded content in pixels or percentage.",
+        "example": "<embed src=\"video.swf\" width=\"640\" height=\"480\">"
+      }
+    ]
+  },
+  "fencedframe": {
+    "name": "fencedframe",
+    "description": "The fenced frame element represents a nested browsing context similar to iframe, but with stronger privacy guarantees. It is experimental and designed for privacy-preserving APIs like Protected Audience.",
+    "example": "<fencedframe src=\"https://example.com/ad.html\" width=\"300\" height=\"250\"></fencedframe>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "The URL of the content to display in the fenced frame. Limited to specific privacy-preserving sources.",
+        "example": "<fencedframe src=\"https://example.com/ad.html\"></fencedframe>"
+      },
+      {
+        "name": "width",
+        "description": "The width of the fenced frame in pixels.",
+        "example": "<fencedframe width=\"300\" height=\"250\"></fencedframe>"
+      },
+      {
+        "name": "height",
+        "description": "The height of the fenced frame in pixels.",
+        "example": "<fencedframe width=\"300\" height=\"250\"></fencedframe>"
+      }
+    ]
+  },
+  "fieldset": {
+    "name": "fieldset",
+    "description": "The fieldset element groups related form controls and labels within a form. The legend element provides a caption for the fieldset, improving accessibility and organization.",
+    "example": "<fieldset>\n  <legend>Personal Information</legend>\n  <label>Name: <input type=\"text\"></label><br>\n  <label>Email: <input type=\"email\"></label>\n</fieldset>",
+    "attributes": [
+      {
+        "name": "disabled",
+        "description": "Disables all form controls within the fieldset. Users cannot interact with disabled controls, and they won't be submitted.",
+        "example": "<fieldset disabled><legend>Info</legend><input type=\"text\"></fieldset>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the fieldset with a form element by its ID, even if the fieldset is not nested inside that form.",
+        "example": "<fieldset form=\"myForm\"><legend>Section</legend></fieldset>"
+      },
+      {
+        "name": "name",
+        "description": "The name of the fieldset, which can be used to reference it in JavaScript or for form organization.",
+        "example": "<fieldset name=\"personalInfo\"><legend>Personal Info</legend></fieldset>"
+      }
+    ]
+  },
+  "figcaption": {
+    "name": "figcaption",
+    "description": "The figure caption element defines a caption or legend for a figure element. It can appear as the first or last child of the figure and describes the content within.",
+    "example": "<figure>\n  <img src=\"image.jpg\" alt=\"Description\">\n  <figcaption>This is the image caption</figcaption>\n</figure>",
+    "attributes": []
+  },
+  "figure": {
+    "name": "figure",
+    "description": "The figure element represents self-contained content like illustrations, diagrams, photos, code listings, etc. It is usually referenced as a single unit from the main flow of the document.",
+    "example": "<figure>\n  <img src=\"photo.jpg\" alt=\"Photo description\">\n  <figcaption>Figure 1: A beautiful sunset</figcaption>\n</figure>",
+    "attributes": []
+  },
+  "font": {
+    "name": "font",
+    "description": "The font element was used to define font size, color, and face for text. This element is deprecated in HTML5 and should not be used. Use CSS font properties instead.",
+    "example": "<font color=\"red\" size=\"5\">Red text</font>",
+    "attributes": [
+      {
+        "name": "color",
+        "description": "Set the text color. Deprecated - use CSS color property instead.",
+        "example": "<font color=\"blue\">Blue text</font>"
+      },
+      {
+        "name": "size",
+        "description": "Set the font size from 1 (smallest) to 7 (largest). Deprecated - use CSS font-size instead.",
+        "example": "<font size=\"6\">Large text</font>"
+      },
+      {
+        "name": "face",
+        "description": "Specified the font family name. Deprecated - use CSS font-family instead.",
+        "example": "<font face=\"Arial\">Arial text</font>"
+      }
+    ]
+  },
+  "footer": {
+    "name": "footer",
+    "description": "The footer element represents a footer for its nearest ancestor sectioning content or sectioning root. It typically contains information about the author, copyright, related links, or contact information.",
+    "example": "<footer>\n  <p>&copy; 2024 Company Name. All rights reserved.</p>\n  <p>Contact: info@example.com</p>\n</footer>",
+    "attributes": []
+  },
+  "form": {
+    "name": "form",
+    "description": "The form element represents a document section containing interactive controls for submitting information. Forms can contain input fields, checkboxes, radio buttons, submit buttons, and more.",
+    "example": "<form action=\"/submit\" method=\"post\">\n  <label>Name: <input type=\"text\" name=\"name\"></label><br>\n  <label>Email: <input type=\"email\" name=\"email\"></label><br>\n  <button type=\"submit\">Submit</button>\n</form>",
+    "attributes": [
+      {
+        "name": "action",
+        "description": "The URL where the form data will be sent when submitted. If omitted, the form submits to the current page.",
+        "example": "<form action=\"/submit\" method=\"post\"></form>"
+      },
+      {
+        "name": "method",
+        "description": "The HTTP method for sending form data. Values: get (data in URL), post (data in request body). Default is get.",
+        "example": "<form method=\"post\" action=\"/submit\"></form>"
+      },
+      {
+        "name": "enctype",
+        "description": "How form data should be encoded. Values: application/x-www-form-urlencoded (default), multipart/form-data (for file uploads), text/plain.",
+        "example": "<form enctype=\"multipart/form-data\" method=\"post\"></form>"
+      },
+      {
+        "name": "target",
+        "description": "Where to display the response after submitting. Values: _self (same window), _blank (new window), _parent, _top.",
+        "example": "<form action=\"/submit\" target=\"_blank\"></form>"
+      },
+      {
+        "name": "name",
+        "description": "The name of the form, used to reference it in JavaScript via document.forms.",
+        "example": "<form name=\"contactForm\" action=\"/submit\"></form>"
+      },
+      {
+        "name": "autocomplete",
+        "description": "Controls whether the browser should autocomplete form fields. Values: on (allow autocomplete), off (disable autocomplete).",
+        "example": "<form autocomplete=\"off\" action=\"/submit\"></form>"
+      },
+      {
+        "name": "novalidate",
+        "description": "Boolean attribute that disables browser's built-in form validation when the form is submitted.",
+        "example": "<form novalidate action=\"/submit\"></form>"
+      },
+      {
+        "name": "accept-charset",
+        "description": "Specifies the character encodings that the server accepts. Default is the page's encoding.",
+        "example": "<form accept-charset=\"UTF-8\" action=\"/submit\"></form>"
+      }
+    ]
+  },
+  "frame": {
+    "name": "frame",
+    "description": "The frame element defined a particular area within a frameset where another HTML document could be displayed. This element is deprecated in HTML5 and should not be used.",
+    "example": "<frameset cols=\"50%,50%\">\n  <frame src=\"left.html\">\n  <frame src=\"right.html\">\n</frameset>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "URL of the document to display in the frame. Deprecated.",
+        "example": "<frame src=\"page.html\">"
+      },
+      {
+        "name": "name",
+        "description": "Name of the frame, used as a target for links. Deprecated.",
+        "example": "<frame src=\"page.html\" name=\"mainFrame\">"
+      },
+      {
+        "name": "scrolling",
+        "description": "Whether to show scrollbars. Values: yes, no, auto. Deprecated.",
+        "example": "<frame src=\"page.html\" scrolling=\"no\">"
+      },
+      {
+        "name": "frameborder",
+        "description": "Whether to display a border around the frame. Values: 1 (yes), 0 (no). Deprecated.",
+        "example": "<frame src=\"page.html\" frameborder=\"0\">"
+      }
+    ]
+  },
+  "frameset": {
+    "name": "frameset",
+    "description": "The frameset element was used to contain frame elements and define the layout of frames. This element is deprecated in HTML5 and should not be used. Use CSS and iframe instead.",
+    "example": "<frameset rows=\"25%,75%\">\n  <frame src=\"header.html\">\n  <frame src=\"content.html\">\n</frameset>",
+    "attributes": [
+      {
+        "name": "rows",
+        "description": "Defines the height of each row in the frameset. Values can be pixels, percentages, or * for remaining space. Deprecated.",
+        "example": "<frameset rows=\"100,*\"></frameset>"
+      },
+      {
+        "name": "cols",
+        "description": "Defines the width of each column in the frameset. Values can be pixels, percentages, or * for remaining space. Deprecated.",
+        "example": "<frameset cols=\"25%,75%\"></frameset>"
+      }
+    ]
+  },
+  "h1": {
+    "name": "h1",
+    "description": "The heading level 1 element represents the highest level section heading. Headings range from h1 (most important) to h6 (least important). Use only one h1 per page for SEO best practices.",
+    "example": "<h1>Main Page Title</h1>",
+    "attributes": []
+  },
+  "head": {
+    "name": "head",
+    "description": "The head element contains metadata about the document including its title, scripts, stylesheets, and other information that isn't displayed directly in the web page.",
+    "example": "<head>\n  <meta charset=\"UTF-8\">\n  <title>Page Title</title>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n</head>",
+    "attributes": []
+  },
+  "header": {
+    "name": "header",
+    "description": "The header element represents introductory content, typically containing navigational aids, logo, search form, heading elements, or other introductory content. It can be used multiple times per page.",
+    "example": "<header>\n  <h1>Website Name</h1>\n  <nav>\n    <a href=\"/\">Home</a>\n    <a href=\"/about\">About</a>\n  </nav>\n</header>",
+    "attributes": []
+  },
+  "hgroup": {
+    "name": "hgroup",
+    "description": "The heading group element groups multiple heading elements (h1-h6) when a heading has multiple levels, such as subheadings, alternative titles, or taglines.",
+    "example": "<hgroup>\n  <h1>Main Title</h1>\n  <h2>Subtitle or tagline</h2>\n</hgroup>",
+    "attributes": []
+  },
+  "hr": {
+    "name": "hr",
+    "description": "The horizontal rule element represents a thematic break between paragraph-level elements. It is typically displayed as a horizontal line and indicates a shift of topic or scene.",
+    "example": "<p>Section one content</p>\n<hr>\n<p>Section two content</p>",
+    "attributes": []
+  },
+  "html": {
+    "name": "html",
+    "description": "The html element represents the root of an HTML document. All other elements must be descendants of this element. It should include the lang attribute to specify the language of the document.",
+    "example": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <title>Page Title</title>\n</head>\n<body>\n  <p>Content here</p>\n</body>\n</html>",
+    "attributes": [
+      {
+        "name": "lang",
+        "description": "Specifies the primary language of the document using language codes (e.g., en for English, es for Spanish). Important for accessibility and SEO.",
+        "example": "<html lang=\"en\"></html>"
+      },
+      {
+        "name": "dir",
+        "description": "Sets the text direction for the document. Values: ltr (left-to-right), rtl (right-to-left), auto.",
+        "example": "<html dir=\"rtl\"></html>"
+      }
+    ]
+  },
+  "i": {
+    "name": "i",
+    "description": "The idiomatic text element represents text in an alternate voice or mood, such as technical terms, foreign language phrases, thoughts, or ship names. Browsers typically display it in italic.",
+    "example": "<p>The term <i>et cetera</i> is often abbreviated as <i>etc.</i></p>",
+    "attributes": []
+  },
+  "iframe": {
+    "name": "iframe",
+    "description": "The inline frame element embeds another HTML page into the current page. It creates a nested browsing context and is commonly used to embed videos, maps, or content from other domains.",
+    "example": "<iframe src=\"https://example.com\" width=\"600\" height=\"400\" title=\"Example\"></iframe>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "The URL of the page to embed in the iframe.",
+        "example": "<iframe src=\"https://example.com\"></iframe>"
+      },
+      {
+        "name": "srcdoc",
+        "description": "Inline HTML content to display instead of loading from src. Overrides the src attribute.",
+        "example": "<iframe srcdoc=\"<p>Hello World</p>\"></iframe>"
+      },
+      {
+        "name": "width",
+        "description": "The width of the iframe in pixels or percentage.",
+        "example": "<iframe src=\"page.html\" width=\"600\"></iframe>"
+      },
+      {
+        "name": "height",
+        "description": "The height of the iframe in pixels or percentage.",
+        "example": "<iframe src=\"page.html\" height=\"400\"></iframe>"
+      },
+      {
+        "name": "name",
+        "description": "A name for the iframe that can be used as a target for links or form submissions.",
+        "example": "<iframe src=\"page.html\" name=\"contentFrame\"></iframe>"
+      },
+      {
+        "name": "sandbox",
+        "description": "Enables restrictions on the iframe content. Values: allow-scripts, allow-forms, allow-popups, allow-same-origin. Empty value applies all restrictions.",
+        "example": "<iframe src=\"page.html\" sandbox=\"allow-scripts\"></iframe>"
+      },
+      {
+        "name": "allow",
+        "description": "Specifies a feature policy for the iframe (e.g., camera, microphone, geolocation). Format: feature-name source-list.",
+        "example": "<iframe src=\"page.html\" allow=\"camera; microphone\"></iframe>"
+      },
+      {
+        "name": "allowfullscreen",
+        "description": "Boolean attribute that allows the iframe content to use the Fullscreen API.",
+        "example": "<iframe src=\"video.html\" allowfullscreen></iframe>"
+      },
+      {
+        "name": "loading",
+        "description": "Controls when the iframe loads. Values: eager (load immediately), lazy (defer loading until near viewport).",
+        "example": "<iframe src=\"page.html\" loading=\"lazy\"></iframe>"
+      },
+      {
+        "name": "referrerpolicy",
+        "description": "Controls how much referrer information is sent when loading the iframe content.",
+        "example": "<iframe src=\"page.html\" referrerpolicy=\"no-referrer\"></iframe>"
+      }
+    ]
+  },
+  "img": {
+    "name": "img",
+    "description": "The image element embeds an image into the document. The src attribute is required and specifies the image path. The alt attribute provides alternative text for accessibility and when images fail to load.",
+    "example": "<img src=\"photo.jpg\" alt=\"A beautiful landscape\" width=\"600\" height=\"400\">",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "The URL or path to the image file. Required attribute.",
+        "example": "<img src=\"photo.jpg\" alt=\"Photo\">"
+      },
+      {
+        "name": "alt",
+        "description": "Alternative text describing the image. Essential for accessibility, SEO, and displays when image fails to load. Required for accessibility.",
+        "example": "<img src=\"logo.png\" alt=\"Company Logo\">"
+      },
+      {
+        "name": "width",
+        "description": "The intrinsic width of the image in pixels (without unit). Helps prevent layout shift during page load.",
+        "example": "<img src=\"photo.jpg\" width=\"800\" alt=\"Photo\">"
+      },
+      {
+        "name": "height",
+        "description": "The intrinsic height of the image in pixels (without unit). Helps prevent layout shift during page load.",
+        "example": "<img src=\"photo.jpg\" height=\"600\" alt=\"Photo\">"
+      },
+      {
+        "name": "loading",
+        "description": "Controls when to load the image. Values: eager (load immediately), lazy (defer loading until near viewport for performance).",
+        "example": "<img src=\"photo.jpg\" loading=\"lazy\" alt=\"Photo\">"
+      },
+      {
+        "name": "srcset",
+        "description": "List of image sources for different screen sizes/resolutions. Format: 'url size, url size'. Enables responsive images.",
+        "example": "<img srcset=\"small.jpg 480w, large.jpg 800w\" alt=\"Photo\">"
+      },
+      {
+        "name": "sizes",
+        "description": "Media conditions indicating what image size to use from srcset. Format: '(condition) size, size'. Works with srcset.",
+        "example": "<img srcset=\"small.jpg 480w, large.jpg 800w\" sizes=\"(max-width: 600px) 480px, 800px\" alt=\"Photo\">"
+      },
+      {
+        "name": "crossorigin",
+        "description": "Configures CORS requests for images from other domains. Values: anonymous, use-credentials.",
+        "example": "<img src=\"https://other.com/img.png\" crossorigin=\"anonymous\" alt=\"Photo\">"
+      },
+      {
+        "name": "usemap",
+        "description": "Associates the image with a map element by its name (prefixed with #) to create clickable regions.",
+        "example": "<img src=\"map.jpg\" usemap=\"#worldmap\" alt=\"World Map\">"
+      },
+      {
+        "name": "ismap",
+        "description": "Boolean attribute indicating the image is a server-side image map. Only works if img is inside an anchor tag.",
+        "example": "<a href=\"/map\"><img src=\"map.jpg\" ismap alt=\"Map\"></a>"
+      },
+      {
+        "name": "decoding",
+        "description": "Hint for image decoding. Values: sync (decode synchronously), async (decode asynchronously), auto (browser decides).",
+        "example": "<img src=\"photo.jpg\" decoding=\"async\" alt=\"Photo\">"
+      },
+      {
+        "name": "referrerpolicy",
+        "description": "Controls referrer information sent when fetching the image.",
+        "example": "<img src=\"photo.jpg\" referrerpolicy=\"no-referrer\" alt=\"Photo\">"
+      }
+    ]
+  },
+  "input": {
+    "name": "input",
+    "description": "The input element creates interactive controls for forms to accept data from users. The type attribute determines the control's behavior, with over 20 different input types available.",
+    "example": "<input type=\"text\" name=\"username\" placeholder=\"Enter username\">\n<input type=\"email\" name=\"email\" required>\n<input type=\"checkbox\" name=\"agree\" id=\"agree\">\n<input type=\"submit\" value=\"Submit\">",
+    "attributes": [
+      {
+        "name": "type",
+        "description": "Defines the input control type. Values include: text, email, password, number, tel, url, search, checkbox, radio, file, date, time, color, submit, button, etc.",
+        "example": "<input type=\"email\" name=\"email\">"
+      },
+      {
+        "name": "name",
+        "description": "The name of the input field, used to identify the data when the form is submitted.",
+        "example": "<input type=\"text\" name=\"username\">"
+      },
+      {
+        "name": "value",
+        "description": "The initial value of the input. For buttons, it's the label. For checkboxes/radio, it's the value submitted when checked.",
+        "example": "<input type=\"text\" name=\"city\" value=\"New York\">"
+      },
+      {
+        "name": "placeholder",
+        "description": "Hint text displayed in the input when it's empty. Disappears when user starts typing.",
+        "example": "<input type=\"text\" placeholder=\"Enter your name\">"
+      },
+      {
+        "name": "required",
+        "description": "Boolean attribute making the field mandatory. Form won't submit if this field is empty.",
+        "example": "<input type=\"email\" name=\"email\" required>"
+      },
+      {
+        "name": "disabled",
+        "description": "Boolean attribute that disables the input. User can't interact with it, and its value won't be submitted.",
+        "example": "<input type=\"text\" name=\"username\" disabled>"
+      },
+      {
+        "name": "readonly",
+        "description": "Boolean attribute making the input non-editable but still submittable and focusable. User can select but not change the value.",
+        "example": "<input type=\"text\" name=\"id\" value=\"12345\" readonly>"
+      },
+      {
+        "name": "min",
+        "description": "Minimum value for number, date, or time inputs. Used for validation.",
+        "example": "<input type=\"number\" name=\"age\" min=\"18\">"
+      },
+      {
+        "name": "max",
+        "description": "Maximum value for number, date, or time inputs. Used for validation.",
+        "example": "<input type=\"number\" name=\"age\" max=\"100\">"
+      },
+      {
+        "name": "step",
+        "description": "Increment value for number, range, date, or time inputs. For number type, defines precision (e.g., step='0.01' for decimals).",
+        "example": "<input type=\"number\" name=\"price\" step=\"0.01\">"
+      },
+      {
+        "name": "pattern",
+        "description": "Regular expression pattern the input value must match for validation. Works with text, search, tel, url, email types.",
+        "example": "<input type=\"text\" name=\"zip\" pattern=\"[0-9]{5}\">"
+      },
+      {
+        "name": "autocomplete",
+        "description": "Controls browser autofill. Values: on, off, or specific tokens like email, username, current-password, cc-number, etc.",
+        "example": "<input type=\"email\" name=\"email\" autocomplete=\"email\">"
+      },
+      {
+        "name": "autofocus",
+        "description": "Boolean attribute that automatically focuses this input when the page loads. Only one element per page should have this.",
+        "example": "<input type=\"text\" name=\"search\" autofocus>"
+      },
+      {
+        "name": "multiple",
+        "description": "Boolean attribute allowing multiple values. Used with email (multiple addresses) or file (multiple file selection) types.",
+        "example": "<input type=\"file\" name=\"files\" multiple>"
+      },
+      {
+        "name": "accept",
+        "description": "For file input, specifies acceptable file types. Format: .ext, audio/*, video/*, image/*, or MIME types.",
+        "example": "<input type=\"file\" name=\"photo\" accept=\"image/*\">"
+      },
+      {
+        "name": "checked",
+        "description": "Boolean attribute for checkbox and radio inputs. When present, the input is selected by default.",
+        "example": "<input type=\"checkbox\" name=\"agree\" checked>"
+      }
+    ]
+  },
+  "ins": {
+    "name": "ins",
+    "description": "The inserted text element represents text that has been added to a document. Browsers typically underline inserted text. Use with del to show document changes or edits.",
+    "example": "<p>My favorite color is <del>blue</del> <ins>red</ins>.</p>",
+    "attributes": [
+      {
+        "name": "cite",
+        "description": "URL that explains or provides context for the insertion. Links to a document explaining why the text was added.",
+        "example": "<ins cite=\"https://example.com/changes\">New text</ins>"
+      },
+      {
+        "name": "datetime",
+        "description": "The date and time when the insertion was made. Format: YYYY-MM-DDThh:mm:ssTZD (e.g., 2024-01-15T14:30:00Z).",
+        "example": "<ins datetime=\"2024-01-15T14:30:00Z\">New text</ins>"
+      }
+    ]
+  },
+  "kbd": {
+    "name": "kbd",
+    "description": "The keyboard input element represents textual user input from a keyboard, voice input, or any other text entry device. Browsers typically render it in a monospace font.",
+    "example": "<p>Press <kbd>Ctrl</kbd> + <kbd>C</kbd> to copy.</p>",
+    "attributes": []
+  },
+  "label": {
+    "name": "label",
+    "description": "The label element represents a caption for a form control. Clicking the label activates the associated control. Associate labels using the for attribute matching the control's id.",
+    "example": "<label for=\"username\">Username:</label>\n<input type=\"text\" id=\"username\" name=\"username\">",
+    "attributes": [
+      {
+        "name": "for",
+        "description": "The ID of the form control this label is associated with. Clicking the label will focus/activate that control. Improves accessibility and usability.",
+        "example": "<label for=\"email\">Email:</label><input type=\"email\" id=\"email\">"
+      },
+      {
+        "name": "form",
+        "description": "The ID of the form element this label belongs to. Allows label to be associated with a form even if not nested inside it.",
+        "example": "<label for=\"name\" form=\"myform\">Name:</label>"
+      }
+    ]
+  },
+  "legend": {
+    "name": "legend",
+    "description": "The legend element represents a caption for the content of its parent fieldset. It must be the first child of the fieldset and helps describe the purpose of grouped form controls.",
+    "example": "<fieldset>\n  <legend>Contact Information</legend>\n  <label>Phone: <input type=\"tel\"></label>\n</fieldset>",
+    "attributes": []
+  },
+  "li": {
+    "name": "li",
+    "description": "The list item element represents an item in an ordered list (ol), unordered list (ul), or menu. In ordered lists, it typically has a number. In unordered lists, a bullet point.",
+    "example": "<ul>\n  <li>First item</li>\n  <li>Second item</li>\n  <li>Third item</li>\n</ul>",
+    "attributes": [
+      {
+        "name": "value",
+        "description": "For ordered lists only: sets the ordinal value of the list item. Subsequent items continue numbering from this value.",
+        "example": "<ol><li value=\"5\">Item 5</li><li>Item 6</li></ol>"
+      }
+    ]
+  },
+  "link": {
+    "name": "link",
+    "description": "The link element specifies relationships between the current document and external resources. It is commonly used to link stylesheets, favicons, and other resources. It must be inside the head element.",
+    "example": "<head>\n  <link rel=\"stylesheet\" href=\"styles.css\">\n  <link rel=\"icon\" href=\"favicon.ico\">\n  <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n</head>",
+    "attributes": [
+      {
+        "name": "href",
+        "description": "The URL of the linked resource. Required for most link types.",
+        "example": "<link rel=\"stylesheet\" href=\"styles.css\">"
+      },
+      {
+        "name": "rel",
+        "description": "Defines the relationship between the current document and the linked resource. Values: stylesheet, icon, preconnect, prefetch, dns-prefetch, canonical, alternate, etc. Required attribute.",
+        "example": "<link rel=\"stylesheet\" href=\"styles.css\">"
+      },
+      {
+        "name": "type",
+        "description": "MIME type of the linked resource (e.g., text/css, image/x-icon). Helps browser understand the resource type.",
+        "example": "<link rel=\"stylesheet\" href=\"styles.css\" type=\"text/css\">"
+      },
+      {
+        "name": "media",
+        "description": "Specifies which media/device the linked resource is optimized for. Uses media queries (e.g., screen, print, (max-width: 600px)).",
+        "example": "<link rel=\"stylesheet\" href=\"print.css\" media=\"print\">"
+      },
+      {
+        "name": "as",
+        "description": "For rel='preload' or 'prefetch', specifies the type of content being loaded. Values: script, style, image, font, document, etc.",
+        "example": "<link rel=\"preload\" href=\"font.woff2\" as=\"font\">"
+      },
+      {
+        "name": "crossorigin",
+        "description": "Configures CORS for the resource. Values: anonymous, use-credentials.",
+        "example": "<link rel=\"stylesheet\" href=\"https://other.com/style.css\" crossorigin=\"anonymous\">"
+      },
+      {
+        "name": "integrity",
+        "description": "Cryptographic hash to verify the resource hasn't been tampered with. Used for Subresource Integrity (SRI) security.",
+        "example": "<link rel=\"stylesheet\" href=\"style.css\" integrity=\"sha384-abc123\">"
+      },
+      {
+        "name": "hreflang",
+        "description": "Language of the linked resource using language codes (e.g., en, fr, es).",
+        "example": "<link rel=\"alternate\" href=\"page-fr.html\" hreflang=\"fr\">"
+      },
+      {
+        "name": "sizes",
+        "description": "For rel='icon', specifies icon sizes. Format: 'widthxheight' (e.g., 16x16, 32x32) or 'any' for scalable icons.",
+        "example": "<link rel=\"icon\" href=\"icon.png\" sizes=\"32x32\">"
+      }
+    ]
+  },
+  "main": {
+    "name": "main",
+    "description": "The main element represents the dominant content of the document's body. Content should be unique to the document and exclude repeated content like sidebars, navigation, copyright, logos, and search forms.",
+    "example": "<main>\n  <article>\n    <h1>Article Title</h1>\n    <p>Main article content...</p>\n  </article>\n</main>",
+    "attributes": []
+  },
+  "map": {
+    "name": "map",
+    "description": "The image map element defines an image map used with area elements to create clickable regions on an image. The name attribute associates the map with an image using the usemap attribute.",
+    "example": "<img src=\"map.jpg\" usemap=\"#worldmap\">\n<map name=\"worldmap\">\n  <area shape=\"rect\" coords=\"0,0,100,100\" href=\"region1.html\" alt=\"Region 1\">\n  <area shape=\"circle\" coords=\"200,200,50\" href=\"region2.html\" alt=\"Region 2\">\n</map>",
+    "attributes": [
+      {
+        "name": "name",
+        "description": "The name of the image map. Referenced by the img element's usemap attribute (with # prefix) to link the map to an image. Required attribute.",
+        "example": "<map name=\"worldmap\"></map>"
+      }
+    ]
+  },
+  "mark": {
+    "name": "mark",
+    "description": "The mark element represents text that is highlighted or marked for reference purposes due to its relevance in a particular context. Browsers typically render it with a yellow background.",
+    "example": "<p>Search results for <mark>HTML</mark> elements.</p>",
+    "attributes": []
+  },
+  "marquee": {
+    "name": "marquee",
+    "description": "The marquee element was used to create scrolling text or images. This element is deprecated and should not be used. Use CSS animations or JavaScript instead.",
+    "example": "<marquee>This text scrolls from right to left</marquee>",
+    "attributes": [
+      {
+        "name": "behavior",
+        "description": "Scrolling behavior. Values: scroll (move across and repeat), slide (move once and stop), alternate (bounce back and forth). Deprecated.",
+        "example": "<marquee behavior=\"alternate\">Bouncing text</marquee>"
+      },
+      {
+        "name": "direction",
+        "description": "Direction of scrolling. Values: left, right, up, down. Deprecated.",
+        "example": "<marquee direction=\"right\">Scrolling right</marquee>"
+      },
+      {
+        "name": "loop",
+        "description": "Number of times to loop the scrolling. Value: number or 'infinite'. Deprecated.",
+        "example": "<marquee loop=\"3\">Scrolls 3 times</marquee>"
+      },
+      {
+        "name": "scrollamount",
+        "description": "Speed of scrolling in pixels per interval. Higher values = faster scrolling. Deprecated.",
+        "example": "<marquee scrollamount=\"10\">Fast scrolling</marquee>"
+      },
+      {
+        "name": "scrolldelay",
+        "description": "Delay between each scroll movement in milliseconds. Deprecated.",
+        "example": "<marquee scrolldelay=\"100\">Slow scrolling</marquee>"
+      }
+    ]
+  },
+  "menu": {
+    "name": "menu",
+    "description": "The menu element represents a semantic grouping of commands or menu items. It can be used for toolbars, context menus, or lists of form buttons. Often styled as an unordered list.",
+    "example": "<menu>\n  <li><button>New File</button></li>\n  <li><button>Open File</button></li>\n  <li><button>Save</button></li>\n</menu>",
+    "attributes": []
+  },
+  "meta": {
+    "name": "meta",
+    "description": "The meta element represents metadata that cannot be represented by other meta-related elements like title, link, or style. It defines character encoding, viewport settings, descriptions, keywords, and more.",
+    "example": "<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta name=\"description\" content=\"Page description\">\n  <meta name=\"keywords\" content=\"HTML, CSS, JavaScript\">\n</head>",
+    "attributes": [
+      {
+        "name": "name",
+        "description": "The type of metadata. Common values: description, keywords, author, viewport, robots, theme-color. Pairs with content attribute.",
+        "example": "<meta name=\"description\" content=\"Page description\">"
+      },
+      {
+        "name": "content",
+        "description": "The value of the metadata specified by name or http-equiv. Required when using name or http-equiv attributes.",
+        "example": "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"
+      },
+      {
+        "name": "charset",
+        "description": "Declares the character encoding for the document. Almost always UTF-8. Should be in first 1024 bytes of document.",
+        "example": "<meta charset=\"UTF-8\">"
+      },
+      {
+        "name": "http-equiv",
+        "description": "Provides an HTTP header for the information in content. Values: refresh, content-type, default-style, content-security-policy.",
+        "example": "<meta http-equiv=\"refresh\" content=\"30\">"
+      }
+    ]
+  },
+  "meter": {
+    "name": "meter",
+    "description": "The meter element represents a scalar measurement within a known range, such as disk usage, vote counts, or relevance of search results. It should not be used for progress indicators; use progress instead.",
+    "example": "<label>Disk usage: <meter value=\"6\" min=\"0\" max=\"10\">6 out of 10</meter></label>",
+    "attributes": [
+      {
+        "name": "value",
+        "description": "The current numeric value. Must be between min and max. Required attribute.",
+        "example": "<meter value=\"6\" min=\"0\" max=\"10\"></meter>"
+      },
+      {
+        "name": "min",
+        "description": "The minimum value of the range. Default is 0.",
+        "example": "<meter value=\"5\" min=\"0\" max=\"10\"></meter>"
+      },
+      {
+        "name": "max",
+        "description": "The maximum value of the range. Default is 1.",
+        "example": "<meter value=\"0.6\" min=\"0\" max=\"1\"></meter>"
+      },
+      {
+        "name": "low",
+        "description": "The upper bound of the low range. Values below this are considered low. Must be greater than min.",
+        "example": "<meter value=\"2\" min=\"0\" low=\"3\" high=\"7\" max=\"10\"></meter>"
+      },
+      {
+        "name": "high",
+        "description": "The lower bound of the high range. Values above this are considered high. Must be less than max.",
+        "example": "<meter value=\"8\" min=\"0\" low=\"3\" high=\"7\" max=\"10\"></meter>"
+      },
+      {
+        "name": "optimum",
+        "description": "The optimal numeric value. Indicates which range is preferred. Browser uses this to color-code the meter.",
+        "example": "<meter value=\"5\" min=\"0\" low=\"3\" optimum=\"5\" high=\"7\" max=\"10\"></meter>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the meter with a form element by its ID.",
+        "example": "<meter value=\"6\" max=\"10\" form=\"myform\"></meter>"
+      }
+    ]
+  },
+  "nav": {
+    "name": "nav",
+    "description": "The navigation element represents a section of a page containing navigation links, either within the current document or to other documents. Not all link groups need to be in a nav element.",
+    "example": "<nav>\n  <ul>\n    <li><a href=\"/\">Home</a></li>\n    <li><a href=\"/about\">About</a></li>\n    <li><a href=\"/contact\">Contact</a></li>\n  </ul>\n</nav>",
+    "attributes": []
+  },
+  "nobr": {
+    "name": "nobr",
+    "description": "The no break element prevented line breaks in text, forcing text to display on a single line. This element is deprecated and should not be used. Use CSS white-space nowrap instead.",
+    "example": "<nobr>This text will not break across lines</nobr>",
+    "attributes": []
+  },
+  "noembed": {
+    "name": "noembed",
+    "description": "The noembed element provided fallback content for browsers that didn't support the embed element. This element is deprecated and obsolete. Modern browsers all support embed.",
+    "example": "<embed src=\"video.swf\">\n<noembed>Your browser does not support embedded content.</noembed>",
+    "attributes": []
+  },
+  "noframes": {
+    "name": "noframes",
+    "description": "The noframes element provided content for browsers that didn't support frames. This element is deprecated along with frame and frameset and should not be used.",
+    "example": "<frameset>\n  <frame src=\"frame.html\">\n  <noframes>Your browser does not support frames.</noframes>\n</frameset>",
+    "attributes": []
+  },
+  "noscript": {
+    "name": "noscript",
+    "description": "The noscript element defines content to be displayed when JavaScript is disabled in the user's browser or if the browser doesn't support scripts. It provides a fallback for script-dependent content.",
+    "example": "<noscript>\n  <p>Please enable JavaScript to use this website.</p>\n</noscript>",
+    "attributes": []
+  },
+  "object": {
+    "name": "object",
+    "description": "The object element embeds external resources such as images, videos, PDFs, or other documents. It can also embed plugins. Use param elements inside to pass parameters to the embedded content.",
+    "example": "<object data=\"document.pdf\" type=\"application/pdf\" width=\"600\" height=\"400\">\n  <p>Your browser doesn't support PDFs. <a href=\"document.pdf\">Download the PDF</a>.</p>\n</object>",
+    "attributes": [
+      {
+        "name": "data",
+        "description": "The URL of the resource to embed. Required for most uses.",
+        "example": "<object data=\"document.pdf\" type=\"application/pdf\"></object>"
+      },
+      {
+        "name": "type",
+        "description": "The MIME type of the embedded resource (e.g., application/pdf, video/mp4, image/svg+xml). Helps browser render it correctly.",
+        "example": "<object data=\"video.mp4\" type=\"video/mp4\"></object>"
+      },
+      {
+        "name": "width",
+        "description": "The width of the object in pixels or percentage.",
+        "example": "<object data=\"doc.pdf\" width=\"600\"></object>"
+      },
+      {
+        "name": "height",
+        "description": "The height of the object in pixels or percentage.",
+        "example": "<object data=\"doc.pdf\" height=\"400\"></object>"
+      },
+      {
+        "name": "name",
+        "description": "Name of the embedded content, which can be used as a target for links or forms.",
+        "example": "<object data=\"doc.pdf\" name=\"pdfViewer\"></object>"
+      },
+      {
+        "name": "usemap",
+        "description": "Associates the object with an image map by its name (prefixed with #).",
+        "example": "<object data=\"map.svg\" usemap=\"#imagemap\"></object>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the object with a form element by its ID.",
+        "example": "<object data=\"data.xml\" form=\"myform\"></object>"
+      }
+    ]
+  },
+  "ol": {
+    "name": "ol",
+    "description": "The ordered list element represents a list of items with a meaningful order. Items are typically displayed with numbering, which can be numerical, alphabetical, or Roman numerals.",
+    "example": "<ol>\n  <li>First step</li>\n  <li>Second step</li>\n  <li>Third step</li>\n</ol>",
+    "attributes": [
+      {
+        "name": "type",
+        "description": "The numbering type. Values: 1 (numbers, default), a (lowercase letters), A (uppercase letters), i (lowercase roman), I (uppercase roman).",
+        "example": "<ol type=\"A\"><li>First</li><li>Second</li></ol>"
+      },
+      {
+        "name": "start",
+        "description": "The starting number for the list. For example, start='5' begins numbering at 5. Works with all type values.",
+        "example": "<ol start=\"5\"><li>Item 5</li><li>Item 6</li></ol>"
+      },
+      {
+        "name": "reversed",
+        "description": "Boolean attribute that reverses the numbering order (counts down instead of up).",
+        "example": "<ol reversed><li>Last</li><li>Second to last</li></ol>"
+      }
+    ]
+  },
+  "optgroup": {
+    "name": "optgroup",
+    "description": "The option group element creates a grouping of options within a select element. The label attribute provides a name for the group, which is displayed but not selectable.",
+    "example": "<select>\n  <optgroup label=\"Fruits\">\n    <option>Apple</option>\n    <option>Banana</option>\n  </optgroup>\n  <optgroup label=\"Vegetables\">\n    <option>Carrot</option>\n    <option>Lettuce</option>\n  </optgroup>\n</select>",
+    "attributes": [
+      {
+        "name": "label",
+        "description": "The name of the option group, displayed as a heading above the grouped options. Required attribute.",
+        "example": "<optgroup label=\"Fruits\"><option>Apple</option></optgroup>"
+      },
+      {
+        "name": "disabled",
+        "description": "Boolean attribute that disables all options in the group, making them unselectable.",
+        "example": "<optgroup label=\"Unavailable\" disabled><option>Item</option></optgroup>"
+      }
+    ]
+  },
+  "option": {
+    "name": "option",
+    "description": "The option element defines an option in a select, datalist, or optgroup element. Each option represents a choice that users can select. The selected attribute marks the default choice.",
+    "example": "<select>\n  <option value=\"1\">Option 1</option>\n  <option value=\"2\" selected>Option 2</option>\n  <option value=\"3\">Option 3</option>\n</select>",
+    "attributes": [
+      {
+        "name": "value",
+        "description": "The value submitted with the form when this option is selected. If omitted, the text content is used as the value.",
+        "example": "<option value=\"us\">United States</option>"
+      },
+      {
+        "name": "selected",
+        "description": "Boolean attribute that marks this option as selected by default when the page loads.",
+        "example": "<option value=\"2\" selected>Option 2</option>"
+      },
+      {
+        "name": "disabled",
+        "description": "Boolean attribute that makes this option unselectable and visually dimmed.",
+        "example": "<option value=\"3\" disabled>Unavailable</option>"
+      },
+      {
+        "name": "label",
+        "description": "A shorter label for the option. If present, it's displayed instead of the text content.",
+        "example": "<option value=\"usa\" label=\"US\">United States</option>"
+      }
+    ]
+  },
+  "output": {
+    "name": "output",
+    "description": "The output element represents the result of a calculation or user action. It is typically used with form elements and can be updated dynamically with JavaScript to show computed values.",
+    "example": "<form oninput=\"result.value=parseInt(a.value)+parseInt(b.value)\">\n  <input type=\"number\" id=\"a\" value=\"0\"> +\n  <input type=\"number\" id=\"b\" value=\"0\"> =\n  <output name=\"result\" for=\"a b\">0</output>\n</form>",
+    "attributes": [
+      {
+        "name": "for",
+        "description": "Space-separated list of IDs of elements that contributed to the calculation. Establishes relationships between inputs and output.",
+        "example": "<output name=\"result\" for=\"a b\">0</output>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the output with a form element by its ID, even if not nested inside the form.",
+        "example": "<output name=\"result\" form=\"calcForm\"></output>"
+      },
+      {
+        "name": "name",
+        "description": "The name of the output element, which can be used to reference it in JavaScript or include it in form data.",
+        "example": "<output name=\"totalPrice\">$0.00</output>"
+      }
+    ]
+  },
+  "p": {
+    "name": "p",
+    "description": "The paragraph element represents a paragraph of text. Paragraphs are block-level elements and are typically displayed with space before and after. They are one of the most commonly used HTML elements.",
+    "example": "<p>This is a paragraph of text. It can contain multiple sentences and will automatically wrap to fit the container width.</p>",
+    "attributes": []
+  },
+  "param": {
+    "name": "param",
+    "description": "The parameter element defines parameters for an object element. It was used to pass name-value pairs to plugins. This element is deprecated in modern HTML.",
+    "example": "<object data=\"animation.swf\">\n  <param name=\"autoplay\" value=\"true\">\n  <param name=\"loop\" value=\"false\">\n</object>",
+    "attributes": [
+      {
+        "name": "name",
+        "description": "The name of the parameter being passed to the embedded object. Deprecated.",
+        "example": "<param name=\"autoplay\" value=\"true\">"
+      },
+      {
+        "name": "value",
+        "description": "The value of the parameter. Deprecated.",
+        "example": "<param name=\"loop\" value=\"false\">"
+      }
+    ]
+  },
+  "picture": {
+    "name": "picture",
+    "description": "The picture element contains zero or more source elements and one img element to offer alternative versions of an image for different display scenarios, such as responsive images or different formats.",
+    "example": "<picture>\n  <source srcset=\"image.webp\" type=\"image/webp\">\n  <source srcset=\"image.jpg\" type=\"image/jpeg\">\n  <img src=\"image.jpg\" alt=\"Description\">\n</picture>",
+    "attributes": []
+  },
+  "plaintext": {
+    "name": "plaintext",
+    "description": "The plaintext element rendered everything after it as plain text without parsing HTML. This element is deprecated and obsolete. Use pre with code or escape HTML entities instead.",
+    "example": "<plaintext>\n<p>This will be displayed as plain text, not HTML</p>",
+    "attributes": []
+  },
+  "pre": {
+    "name": "pre",
+    "description": "The preformatted text element displays text exactly as written in the HTML, preserving spaces, line breaks, and indentation. Text is typically rendered in a monospace font.",
+    "example": "<pre>\nfunction hello() {\n    console.log('Hello World');\n}\n</pre>",
+    "attributes": []
+  },
+  "progress": {
+    "name": "progress",
+    "description": "The progress element displays an indicator showing the completion progress of a task, such as file uploads or form completions. Use the value and max attributes to set the current and maximum values.",
+    "example": "<label>Upload progress:</label>\n<progress value=\"70\" max=\"100\">70%</progress>",
+    "attributes": [
+      {
+        "name": "value",
+        "description": "The current progress value. Must be between 0 and max. If omitted, the progress bar is indeterminate (animated but no specific value).",
+        "example": "<progress value=\"70\" max=\"100\">70%</progress>"
+      },
+      {
+        "name": "max",
+        "description": "The maximum value, representing 100% completion. Default is 1. Must be greater than 0.",
+        "example": "<progress value=\"0.5\" max=\"1\">50%</progress>"
+      }
+    ]
+  },
+  "q": {
+    "name": "q",
+    "description": "The inline quotation element indicates short quotations that don't require paragraph breaks. Browsers automatically insert quotation marks around the text. The cite attribute can specify the source URL.",
+    "example": "<p>According to the manual, <q cite=\"manual.html\">always save your work</q>.</p>",
+    "attributes": [
+      {
+        "name": "cite",
+        "description": "URL of the source from which the quotation is taken. Provides metadata but is not displayed visually.",
+        "example": "<q cite=\"https://example.com/quote\">quoted text</q>"
+      }
+    ]
+  },
+  "rb": {
+    "name": "rb",
+    "description": "The ruby base element was used to delimit the base text component of a ruby annotation. This element is deprecated. Use ruby text directly without wrapping in rb.",
+    "example": "<ruby>\n  <rb>漢</rb><rt>kan</rt>\n  <rb>字</rb><rt>ji</rt>\n</ruby>",
+    "attributes": []
+  },
+  "rp": {
+    "name": "rp",
+    "description": "The ruby parenthesis element provides fallback parentheses for browsers that don't support ruby annotations. The content is shown only in browsers that don't support ruby.",
+    "example": "<ruby>\n  漢字 <rp>(</rp><rt>kanji</rt><rp>)</rp>\n</ruby>",
+    "attributes": []
+  },
+  "rt": {
+    "name": "rt",
+    "description": "The ruby text element specifies the pronunciation or meaning of characters in a ruby annotation. It is used to show pronunciation guides for East Asian typography.",
+    "example": "<ruby>\n  漢字 <rt>kanji</rt>\n</ruby>",
+    "attributes": []
+  },
+  "rtc": {
+    "name": "rtc",
+    "description": "The ruby text container element was used to contain semantic annotations of characters in a ruby annotation. This element is deprecated and not widely supported.",
+    "example": "<ruby>\n  漢字\n  <rtc><rt>kan</rt><rt>ji</rt></rtc>\n</ruby>",
+    "attributes": []
+  },
+  "ruby": {
+    "name": "ruby",
+    "description": "The ruby element represents small annotations typically used above or beside East Asian characters to show pronunciation or meaning. It contains base text and ruby text (rt) elements.",
+    "example": "<ruby>\n  東京 <rt>とうきょう</rt>\n</ruby>",
+    "attributes": []
+  },
+  "s": {
+    "name": "s",
+    "description": "The strikethrough element renders text with a strikethrough line through it, indicating content that is no longer accurate or relevant. Use del if you need to indicate deleted content instead.",
+    "example": "<p>Regular price: <s>$50</s> Sale price: $30</p>",
+    "attributes": []
+  },
+  "samp": {
+    "name": "samp",
+    "description": "The sample output element represents sample or quoted output from a computer program. Browsers typically render it in a monospace font to distinguish it from regular text.",
+    "example": "<p>The program returned: <samp>Error 404: File not found</samp></p>",
+    "attributes": []
+  },
+  "script": {
+    "name": "script",
+    "description": "The script element embeds or references executable code, typically JavaScript. It can contain inline code or reference an external file using the src attribute. Scripts can be deferred or made async.",
+    "example": "<script>\n  console.log('Hello World');\n</script>\n<script src=\"app.js\"></script>\n<script src=\"module.js\" type=\"module\"></script>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "URL of an external script file. When present, the element's content is ignored.",
+        "example": "<script src=\"app.js\"></script>"
+      },
+      {
+        "name": "type",
+        "description": "MIME type of the script. Default is text/javascript. Use 'module' for ES6 modules. Other types like 'application/json' for data.",
+        "example": "<script src=\"module.js\" type=\"module\"></script>"
+      },
+      {
+        "name": "async",
+        "description": "Boolean attribute for external scripts. Downloads script in parallel and executes as soon as available, without blocking HTML parsing.",
+        "example": "<script src=\"analytics.js\" async></script>"
+      },
+      {
+        "name": "defer",
+        "description": "Boolean attribute for external scripts. Downloads in parallel but delays execution until HTML parsing is complete. Maintains script order.",
+        "example": "<script src=\"app.js\" defer></script>"
+      },
+      {
+        "name": "crossorigin",
+        "description": "Configures CORS for external scripts. Values: anonymous, use-credentials.",
+        "example": "<script src=\"https://cdn.com/lib.js\" crossorigin=\"anonymous\"></script>"
+      },
+      {
+        "name": "integrity",
+        "description": "Cryptographic hash for Subresource Integrity (SRI) verification. Ensures the script hasn't been tampered with.",
+        "example": "<script src=\"lib.js\" integrity=\"sha384-abc123\"></script>"
+      },
+      {
+        "name": "nomodule",
+        "description": "Boolean attribute. Script executes only in browsers that don't support ES6 modules. Used for fallback scripts.",
+        "example": "<script src=\"legacy.js\" nomodule></script>"
+      },
+      {
+        "name": "referrerpolicy",
+        "description": "Controls referrer information sent when fetching the script.",
+        "example": "<script src=\"app.js\" referrerpolicy=\"no-referrer\"></script>"
+      }
+    ]
+  },
+  "search": {
+    "name": "search",
+    "description": "The search element represents a section containing search functionality. It semantically identifies search features on a page and can contain search forms, filters, or search results.",
+    "example": "<search>\n  <form action=\"/search\" method=\"get\">\n    <input type=\"search\" name=\"q\" placeholder=\"Search...\">\n    <button type=\"submit\">Search</button>\n  </form>\n</search>",
+    "attributes": []
+  },
+  "section": {
+    "name": "section",
+    "description": "The section element represents a generic standalone section of a document that doesn't have a more specific semantic element. Sections should typically have a heading as their first child.",
+    "example": "<section>\n  <h2>Section Title</h2>\n  <p>Section content goes here...</p>\n</section>",
+    "attributes": []
+  },
+  "select": {
+    "name": "select",
+    "description": "The select element creates a dropdown list of options. Users can choose one or multiple options depending on the multiple attribute. Options are defined using option elements.",
+    "example": "<label for=\"country\">Choose a country:</label>\n<select id=\"country\" name=\"country\">\n  <option value=\"us\">United States</option>\n  <option value=\"ca\">Canada</option>\n  <option value=\"uk\">United Kingdom</option>\n</select>",
+    "attributes": [
+      {
+        "name": "name",
+        "description": "The name of the select control, used to identify it when the form is submitted.",
+        "example": "<select name=\"country\"><option>USA</option></select>"
+      },
+      {
+        "name": "multiple",
+        "description": "Boolean attribute allowing selection of multiple options. Users can select multiple items with Ctrl/Cmd+click.",
+        "example": "<select name=\"colors\" multiple><option>Red</option></select>"
+      },
+      {
+        "name": "required",
+        "description": "Boolean attribute making selection mandatory. Form won't submit without a selection.",
+        "example": "<select name=\"country\" required><option>USA</option></select>"
+      },
+      {
+        "name": "disabled",
+        "description": "Boolean attribute disabling the entire select control. User can't interact with it, and its value won't be submitted.",
+        "example": "<select name=\"country\" disabled><option>USA</option></select>"
+      },
+      {
+        "name": "size",
+        "description": "Number of visible options. If greater than 1 or multiple is set, displays as a scrollable list box instead of dropdown.",
+        "example": "<select name=\"country\" size=\"5\"><option>USA</option></select>"
+      },
+      {
+        "name": "autofocus",
+        "description": "Boolean attribute that automatically focuses this select when the page loads.",
+        "example": "<select name=\"country\" autofocus><option>USA</option></select>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the select with a form element by its ID, even if not nested inside the form.",
+        "example": "<select name=\"country\" form=\"myform\"><option>USA</option></select>"
+      }
+    ]
+  },
+  "selectedcontent": {
+    "name": "selectedcontent",
+    "description": "The selected content element is an experimental feature that represents the selected content in a page. This is part of the CSS Custom Highlight API and is not yet widely supported.",
+    "example": "<selectedcontent></selectedcontent>",
+    "attributes": []
+  },
+  "slot": {
+    "name": "slot",
+    "description": "The slot element is a placeholder inside a web component that you can fill with your own markup. It enables creating flexible, reusable components by allowing users to customize parts of the component.",
+    "example": "<template id=\"my-component\">\n  <div>\n    <h2><slot name=\"title\">Default Title</slot></h2>\n    <slot>Default content</slot>\n  </div>\n</template>",
+    "attributes": [
+      {
+        "name": "name",
+        "description": "The name of the slot. Used to identify which content goes into which slot when using the component. Unnamed slots are default slots.",
+        "example": "<slot name=\"header\">Default header</slot>"
+      }
+    ]
+  },
+  "small": {
+    "name": "small",
+    "description": "The small element represents side comments and small print, such as copyright and legal text. It renders text in a smaller font size, but should be used for semantic purposes, not just styling.",
+    "example": "<p>Product price: $99.99</p>\n<small>&copy; 2024 Company Name. All rights reserved.</small>",
+    "attributes": []
+  },
+  "source": {
+    "name": "source",
+    "description": "The source element specifies multiple media resources for picture, audio, or video elements. The browser chooses the most suitable source based on format support, screen size, or other factors.",
+    "example": "<video controls>\n  <source src=\"video.mp4\" type=\"video/mp4\">\n  <source src=\"video.webm\" type=\"video/webm\">\n  Your browser doesn't support video.\n</video>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "URL of the media resource. Required for audio and video. For picture, use srcset instead.",
+        "example": "<source src=\"video.mp4\" type=\"video/mp4\">"
+      },
+      {
+        "name": "type",
+        "description": "MIME type of the media resource (e.g., video/mp4, audio/ogg, image/webp). Helps browser select compatible format without downloading.",
+        "example": "<source src=\"audio.ogg\" type=\"audio/ogg\">"
+      },
+      {
+        "name": "srcset",
+        "description": "For picture element: list of image sources with their widths or pixel densities. Format: 'url width, url width' or 'url 1x, url 2x'.",
+        "example": "<source srcset=\"img-480.jpg 480w, img-800.jpg 800w\">"
+      },
+      {
+        "name": "sizes",
+        "description": "For picture element: media conditions describing image display size. Works with srcset to choose appropriate image.",
+        "example": "<source srcset=\"img.jpg 480w, img2.jpg 800w\" sizes=\"(max-width: 600px) 480px, 800px\">"
+      },
+      {
+        "name": "media",
+        "description": "For picture element: media query determining when this source should be used (e.g., '(min-width: 600px)').",
+        "example": "<source media=\"(min-width: 768px)\" srcset=\"large.jpg\">"
+      },
+      {
+        "name": "width",
+        "description": "For picture element: intrinsic width of the image in pixels.",
+        "example": "<source srcset=\"img.jpg\" width=\"800\">"
+      },
+      {
+        "name": "height",
+        "description": "For picture element: intrinsic height of the image in pixels.",
+        "example": "<source srcset=\"img.jpg\" height=\"600\">"
+      }
+    ]
+  },
+  "span": {
+    "name": "span",
+    "description": "The span element is a generic inline container for phrasing content. It has no semantic meaning and is used to group elements for styling with CSS or as a target for JavaScript.",
+    "example": "<p>This is <span class=\"highlight\">highlighted text</span> in a paragraph.</p>",
+    "attributes": []
+  },
+  "strike": {
+    "name": "strike",
+    "description": "The strike element rendered text with a strikethrough. This element is deprecated in HTML5 and should not be used. Use s or del with CSS instead.",
+    "example": "<p>This is <strike>crossed out text</strike>.</p>",
+    "attributes": []
+  },
+  "strong": {
+    "name": "strong",
+    "description": "The strong element indicates strong importance, seriousness, or urgency for its contents. Browsers typically render it in bold, but the emphasis is semantic, not just visual.",
+    "example": "<p><strong>Warning:</strong> This action cannot be undone.</p>",
+    "attributes": []
+  },
+  "style": {
+    "name": "style",
+    "description": "The style element contains CSS style information for a document. It is typically placed in the head section but can also be used in the body with certain restrictions.",
+    "example": "<style>\n  body {\n    font-family: Arial, sans-serif;\n    color: #333;\n  }\n  h1 {\n    color: blue;\n  }\n</style>",
+    "attributes": [
+      {
+        "name": "media",
+        "description": "Specifies which media/device the styles are optimized for. Uses media queries (e.g., screen, print, (max-width: 600px)).",
+        "example": "<style media=\"print\">body { color: black; }</style>"
+      },
+      {
+        "name": "type",
+        "description": "MIME type of the style language. Default is text/css. Usually omitted since CSS is the default.",
+        "example": "<style type=\"text/css\">h1 { color: blue; }</style>"
+      }
+    ]
+  },
+  "sub": {
+    "name": "sub",
+    "description": "The subscript element renders text as subscript, appearing half a character below the normal line. It is used for mathematical formulas, chemical formulas, or footnote references.",
+    "example": "<p>Water formula: H<sub>2</sub>O</p>\n<p>Footnote reference<sub>1</sub></p>",
+    "attributes": []
+  },
+  "summary": {
+    "name": "summary",
+    "description": "The summary element specifies a visible heading for a details element. Clicking the summary toggles the visibility of the details content. If omitted, the browser provides a default summary.",
+    "example": "<details>\n  <summary>Click to see more</summary>\n  <p>This is the hidden content revealed by clicking the summary.</p>\n</details>",
+    "attributes": []
+  },
+  "sup": {
+    "name": "sup",
+    "description": "The superscript element renders text as superscript, appearing half a character above the normal line. It is used for exponents, ordinal indicators, or mathematical notation.",
+    "example": "<p>E = mc<sup>2</sup></p>\n<p>5<sup>th</sup> Avenue</p>",
+    "attributes": []
+  },
+  "table": {
+    "name": "table",
+    "description": "The table element represents tabular data displayed in rows and columns. Tables should be used for data, not for layout. Use CSS Grid or Flexbox for layouts instead.",
+    "example": "<table>\n  <thead>\n    <tr>\n      <th>Name</th>\n      <th>Age</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>John</td>\n      <td>25</td>\n    </tr>\n  </tbody>\n</table>",
+    "attributes": []
+  },
+  "tbody": {
+    "name": "tbody",
+    "description": "The table body element groups the body content of a table. It is used with thead and tfoot to semantically organize table sections and enable independent scrolling or styling.",
+    "example": "<table>\n  <thead>\n    <tr><th>Header</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Body row 1</td></tr>\n    <tr><td>Body row 2</td></tr>\n  </tbody>\n</table>",
+    "attributes": []
+  },
+  "td": {
+    "name": "td",
+    "description": "The table data cell element defines a cell in a table that contains data. Cells can span multiple rows or columns using rowspan and colspan attributes.",
+    "example": "<table>\n  <tr>\n    <td>Cell 1</td>\n    <td>Cell 2</td>\n  </tr>\n  <tr>\n    <td colspan=\"2\">Spanning cell</td>\n  </tr>\n</table>",
+    "attributes": [
+      {
+        "name": "colspan",
+        "description": "Number of columns the cell should span. Default is 1. Useful for creating cells that extend across multiple columns.",
+        "example": "<td colspan=\"2\">Spans 2 columns</td>"
+      },
+      {
+        "name": "rowspan",
+        "description": "Number of rows the cell should span. Default is 1. Useful for creating cells that extend across multiple rows.",
+        "example": "<td rowspan=\"3\">Spans 3 rows</td>"
+      },
+      {
+        "name": "headers",
+        "description": "Space-separated list of header cell IDs that this cell is associated with. Improves table accessibility for screen readers.",
+        "example": "<td headers=\"col1 col2\">Data</td>"
+      }
+    ]
+  },
+  "template": {
+    "name": "template",
+    "description": "The template element holds HTML that is not rendered when the page loads but can be instantiated later using JavaScript. It is useful for creating reusable content structures.",
+    "example": "<template id=\"my-template\">\n  <div class=\"card\">\n    <h3>Title</h3>\n    <p>Content</p>\n  </div>\n</template>",
+    "attributes": []
+  },
+  "textarea": {
+    "name": "textarea",
+    "description": "The textarea element creates a multi-line plain text editing control. It is useful for forms where users need to enter substantial amounts of text, such as comments or messages.",
+    "example": "<label for=\"message\">Message:</label>\n<textarea id=\"message\" name=\"message\" rows=\"4\" cols=\"50\" placeholder=\"Enter your message...\"></textarea>",
+    "attributes": [
+      {
+        "name": "name",
+        "description": "The name of the textarea control, used to identify it when the form is submitted.",
+        "example": "<textarea name=\"comment\"></textarea>"
+      },
+      {
+        "name": "rows",
+        "description": "Number of visible text lines. Controls the default height of the textarea.",
+        "example": "<textarea rows=\"5\"></textarea>"
+      },
+      {
+        "name": "cols",
+        "description": "Number of visible character widths. Controls the default width of the textarea.",
+        "example": "<textarea cols=\"50\"></textarea>"
+      },
+      {
+        "name": "placeholder",
+        "description": "Hint text displayed when the textarea is empty. Disappears when user starts typing.",
+        "example": "<textarea placeholder=\"Enter your message...\"></textarea>"
+      },
+      {
+        "name": "required",
+        "description": "Boolean attribute making the textarea mandatory. Form won't submit if this field is empty.",
+        "example": "<textarea name=\"message\" required></textarea>"
+      },
+      {
+        "name": "disabled",
+        "description": "Boolean attribute disabling the textarea. User can't interact with it, and its value won't be submitted.",
+        "example": "<textarea name=\"comment\" disabled></textarea>"
+      },
+      {
+        "name": "readonly",
+        "description": "Boolean attribute making the textarea non-editable but still submittable and focusable.",
+        "example": "<textarea readonly>Cannot edit this text</textarea>"
+      },
+      {
+        "name": "maxlength",
+        "description": "Maximum number of characters allowed. Browser prevents entering more characters.",
+        "example": "<textarea maxlength=\"500\"></textarea>"
+      },
+      {
+        "name": "minlength",
+        "description": "Minimum number of characters required for validation.",
+        "example": "<textarea minlength=\"10\"></textarea>"
+      },
+      {
+        "name": "wrap",
+        "description": "How text wraps when submitted. Values: soft (no wrapping in submitted data, default), hard (line breaks included in submitted data, requires cols).",
+        "example": "<textarea wrap=\"hard\" cols=\"50\"></textarea>"
+      },
+      {
+        "name": "autocomplete",
+        "description": "Controls browser autofill. Values: on, off.",
+        "example": "<textarea autocomplete=\"off\"></textarea>"
+      },
+      {
+        "name": "autofocus",
+        "description": "Boolean attribute that automatically focuses this textarea when the page loads.",
+        "example": "<textarea autofocus></textarea>"
+      },
+      {
+        "name": "form",
+        "description": "Associates the textarea with a form element by its ID, even if not nested inside the form.",
+        "example": "<textarea form=\"myform\"></textarea>"
+      }
+    ]
+  },
+  "tfoot": {
+    "name": "tfoot",
+    "description": "The table foot element groups footer content in a table. It typically contains summary rows such as totals or averages. It must appear after any caption, colgroup, thead, or tbody elements.",
+    "example": "<table>\n  <thead>\n    <tr><th>Item</th><th>Price</th></tr>\n  </thead>\n  <tbody>\n    <tr><td>Item 1</td><td>$10</td></tr>\n  </tbody>\n  <tfoot>\n    <tr><td>Total</td><td>$10</td></tr>\n  </tfoot>\n</table>",
+    "attributes": []
+  },
+  "th": {
+    "name": "th",
+    "description": "The table header cell element defines a cell as a header for a group of table cells. Header cells are typically bold and centered and provide context for data cells. Use the scope attribute for accessibility.",
+    "example": "<table>\n  <tr>\n    <th scope=\"col\">Name</th>\n    <th scope=\"col\">Age</th>\n  </tr>\n  <tr>\n    <td>John</td>\n    <td>25</td>\n  </tr>\n</table>",
+    "attributes": [
+      {
+        "name": "colspan",
+        "description": "Number of columns the header cell should span. Default is 1.",
+        "example": "<th colspan=\"2\">Spanning Header</th>"
+      },
+      {
+        "name": "rowspan",
+        "description": "Number of rows the header cell should span. Default is 1.",
+        "example": "<th rowspan=\"2\">Header</th>"
+      },
+      {
+        "name": "scope",
+        "description": "Defines which cells this header applies to. Values: row (header for row), col (header for column), rowgroup, colgroup. Important for accessibility.",
+        "example": "<th scope=\"col\">Column Header</th>"
+      },
+      {
+        "name": "headers",
+        "description": "Space-separated list of other header cell IDs this cell is associated with. For complex tables with multiple header levels.",
+        "example": "<th id=\"header2\" headers=\"header1\">Sub-header</th>"
+      },
+      {
+        "name": "abbr",
+        "description": "Abbreviated version of the header text. Screen readers may use this for a shorter description.",
+        "example": "<th abbr=\"Qty\">Quantity</th>"
+      }
+    ]
+  },
+  "thead": {
+    "name": "thead",
+    "description": "The table head element groups header content in a table. It typically contains rows of column headers and must appear after any caption and colgroup elements.",
+    "example": "<table>\n  <thead>\n    <tr>\n      <th>Name</th>\n      <th>Email</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <td>John Doe</td>\n      <td>john@example.com</td>\n    </tr>\n  </tbody>\n</table>",
+    "attributes": []
+  },
+  "time": {
+    "name": "time",
+    "description": "The time element represents a specific time or time range. The datetime attribute provides a machine-readable format while the element content shows the human-readable version.",
+    "example": "<p>The concert starts at <time datetime=\"2024-12-31T20:00\">8:00 PM on December 31, 2024</time>.</p>",
+    "attributes": [
+      {
+        "name": "datetime",
+        "description": "Machine-readable date/time in ISO 8601 format. Examples: 2024-01-15 (date), 14:30 (time), 2024-01-15T14:30:00Z (full datetime). Required if content is not parseable.",
+        "example": "<time datetime=\"2024-12-31T20:00\">8:00 PM on Dec 31</time>"
+      }
+    ]
+  },
+  "title": {
+    "name": "title",
+    "description": "The title element defines the document's title shown in the browser's title bar or page tab. It is required in all HTML documents and must be placed inside the head element.",
+    "example": "<head>\n  <title>My Website - Home Page</title>\n</head>",
+    "attributes": []
+  },
+  "tr": {
+    "name": "tr",
+    "description": "The table row element defines a row of cells in a table. Each row contains one or more th or td elements. Rows are grouped within thead, tbody, or tfoot sections.",
+    "example": "<table>\n  <tr>\n    <th>Header 1</th>\n    <th>Header 2</th>\n  </tr>\n  <tr>\n    <td>Data 1</td>\n    <td>Data 2</td>\n  </tr>\n</table>",
+    "attributes": []
+  },
+  "track": {
+    "name": "track",
+    "description": "The track element specifies timed text tracks for video and audio elements. It is used to add subtitles, captions, descriptions, chapters, or metadata to media elements.",
+    "example": "<video controls>\n  <source src=\"video.mp4\" type=\"video/mp4\">\n  <track src=\"subtitles_en.vtt\" kind=\"subtitles\" srclang=\"en\" label=\"English\">\n  <track src=\"subtitles_es.vtt\" kind=\"subtitles\" srclang=\"es\" label=\"Spanish\">\n</video>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "URL of the track file (usually .vtt format). Required attribute.",
+        "example": "<track src=\"subtitles.vtt\" kind=\"subtitles\" srclang=\"en\">"
+      },
+      {
+        "name": "kind",
+        "description": "Type of text track. Values: subtitles (translation for dialogue), captions (dialogue + sounds), descriptions (visual descriptions), chapters (chapter titles), metadata (hidden data for scripts).",
+        "example": "<track src=\"subs.vtt\" kind=\"subtitles\" srclang=\"en\">"
+      },
+      {
+        "name": "srclang",
+        "description": "Language of the track using language codes (e.g., en, es, fr). Required if kind is subtitles.",
+        "example": "<track src=\"sub_en.vtt\" kind=\"subtitles\" srclang=\"en\">"
+      },
+      {
+        "name": "label",
+        "description": "User-visible title for the track shown in the media player's track selection menu (e.g., 'English Subtitles').",
+        "example": "<track src=\"subs.vtt\" kind=\"subtitles\" label=\"English\">"
+      },
+      {
+        "name": "default",
+        "description": "Boolean attribute indicating this track should be enabled by default unless user preferences indicate otherwise.",
+        "example": "<track src=\"subs.vtt\" kind=\"subtitles\" srclang=\"en\" default>"
+      }
+    ]
+  },
+  "tt": {
+    "name": "tt",
+    "description": "The teletype text element was used to display text in a monospace font, representing computer terminal output. This element is deprecated in HTML5 and should not be used. Use code, kbd, or samp instead.",
+    "example": "<p>Type <tt>ls -la</tt> to list files.</p>",
+    "attributes": []
+  },
+  "u": {
+    "name": "u",
+    "description": "The unarticulated annotation element renders text with an underline, representing text with a non-textual annotation such as Chinese proper name marks or spelling errors. For emphasis, use em instead.",
+    "example": "<p>This text has a <u>spelling eror</u> marked.</p>",
+    "attributes": []
+  },
+  "ul": {
+    "name": "ul",
+    "description": "The unordered list element represents a list of items where the order doesn't matter. Items are typically displayed with bullet points. Use ol when the order is significant.",
+    "example": "<ul>\n  <li>Coffee</li>\n  <li>Tea</li>\n  <li>Milk</li>\n</ul>",
+    "attributes": []
+  },
+  "var": {
+    "name": "var",
+    "description": "The variable element represents a variable in mathematical expressions or programming contexts. Browsers typically render it in italic to distinguish it from regular text.",
+    "example": "<p>The area of a rectangle is <var>width</var> × <var>height</var>.</p>",
+    "attributes": []
+  },
+  "video": {
+    "name": "video",
+    "description": "The video element embeds video content in a document. It can contain multiple sources for format compatibility and provides a fallback message for unsupported browsers. Controls can be added for playback.",
+    "example": "<video width=\"640\" height=\"360\" controls>\n  <source src=\"video.mp4\" type=\"video/mp4\">\n  <source src=\"video.webm\" type=\"video/webm\">\n  Your browser doesn't support video playback.\n</video>",
+    "attributes": [
+      {
+        "name": "src",
+        "description": "The URL of the video file to play. Can be omitted if using source elements instead.",
+        "example": "<video src=\"video.mp4\" controls></video>"
+      },
+      {
+        "name": "controls",
+        "description": "Boolean attribute that displays the browser's default video controls (play, pause, volume, fullscreen, etc.).",
+        "example": "<video src=\"video.mp4\" controls></video>"
+      },
+      {
+        "name": "autoplay",
+        "description": "Makes the video start playing automatically when the page loads. Most browsers require muted attribute for autoplay to work.",
+        "example": "<video src=\"video.mp4\" autoplay muted></video>"
+      },
+      {
+        "name": "loop",
+        "description": "Boolean attribute that makes the video repeat continuously from the beginning after it ends.",
+        "example": "<video src=\"video.mp4\" controls loop></video>"
+      },
+      {
+        "name": "muted",
+        "description": "Boolean attribute that starts the video with sound muted. Often required for autoplay to work in modern browsers.",
+        "example": "<video src=\"video.mp4\" autoplay muted></video>"
+      },
+      {
+        "name": "preload",
+        "description": "Hints how much video to load before playing. Values: none (load nothing), metadata (load only metadata like duration), auto (load entire file).",
+        "example": "<video src=\"video.mp4\" preload=\"metadata\" controls></video>"
+      },
+      {
+        "name": "poster",
+        "description": "URL of an image to display as the video thumbnail before the video plays. Shows while video is loading or before user clicks play.",
+        "example": "<video src=\"video.mp4\" poster=\"thumbnail.jpg\" controls></video>"
+      },
+      {
+        "name": "width",
+        "description": "The display width of the video in pixels. Should match video aspect ratio with height.",
+        "example": "<video src=\"video.mp4\" width=\"640\" height=\"360\" controls></video>"
+      },
+      {
+        "name": "height",
+        "description": "The display height of the video in pixels. Should match video aspect ratio with width.",
+        "example": "<video src=\"video.mp4\" width=\"640\" height=\"360\" controls></video>"
+      },
+      {
+        "name": "crossorigin",
+        "description": "Configures CORS requests for video from other domains. Values: anonymous, use-credentials.",
+        "example": "<video src=\"https://other.com/video.mp4\" crossorigin=\"anonymous\" controls></video>"
+      },
+      {
+        "name": "playsinline",
+        "description": "Boolean attribute that allows video to play inline on mobile devices instead of fullscreen. Important for iOS devices.",
+        "example": "<video src=\"video.mp4\" controls playsinline></video>"
+      }
+    ]
+  },
+  "wbr": {
+    "name": "wbr",
+    "description": "The word break opportunity element represents a position within text where the browser may optionally break a line, even though its line-breaking rules would not otherwise create a break at that location.",
+    "example": "<p>This is a very<wbr>long<wbr>word<wbr>that<wbr>can<wbr>break<wbr>anywhere.</p>",
+    "attributes": []
+  },
+  "xmp": {
+    "name": "xmp",
+    "description": "The example element was used to display preformatted text without parsing HTML tags. This element is deprecated and obsolete. Use pre with escaped HTML entities instead.",
+    "example": "<xmp>\n<html>\n  <body>Example code</body>\n</html>\n</xmp>",
+    "attributes": []
+  }
+}

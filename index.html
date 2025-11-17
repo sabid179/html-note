@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Note</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <h1>HTML Note</h1>
+        <ul>
+            <li><a href="#attributes">Elements</a></li>
+            <li><a href="editing/suggest-an-edit.html">Suggest an Edit</a></li>
+        </ul>
+    </nav>
+
+    <div class="attributes">
+        <h2 id="attributes">Elements</h2>
+            <div class="element-grid" id="elementGrid">
+                <!-- Buttons will be generated dynamically from elements-data.json -->
+            </div>
+    </div>
+
+    <footer>
+        <p>No Rights Reserved</p>
+        <p>Developed with AI assistance | Concept, design, and architecture by sparse_brainer</p>
+        <p>Content sourced from MDN Web Docs</p>
+    </footer>
+    
+    <script>
+        // Fetch and display elements from JSON
+        fetch('elements/elements-data.json')
+            .then(response => response.json())
+            .then(data => {
+                const grid = document.getElementById('elementGrid');
+                const elements = Object.keys(data).sort();
+                
+                let currentLetter = '';
+                
+                elements.forEach(elementName => {
+                    const firstLetter = elementName.charAt(0).toUpperCase();
+                    
+                    // Add letter heading if new letter
+                    if (firstLetter !== currentLetter) {
+                        currentLetter = firstLetter;
+                        const heading = document.createElement('h3');
+                        heading.style.cssText = 'grid-column: 1 / -1; margin: 20px 0 10px 0; color: #333; border-bottom: 2px solid #d0d0d0; padding-bottom: 5px;';
+                        heading.textContent = currentLetter;
+                        grid.appendChild(heading);
+                    }
+                    
+                    // Create button
+                    const button = document.createElement('button');
+                    button.className = 'element-btn';
+                    button.onclick = () => location.href = `elements/element.html?element=${elementName}`;
+                    button.textContent = elementName;
+                    
+                    grid.appendChild(button);
+                });
+            })
+            .catch(error => console.error('Error loading elements:', error));
+    </script>
+
+</body>
+</html>

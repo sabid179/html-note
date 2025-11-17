@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">Element Detail</title>
+    <link rel="stylesheet" href="element.css">
+</head>
+<body>
+    <nav>
+        <h1 id="element-name"></h1>
+        <a href="../index.html" class="back-btn">← Back to Elements</a>
+    </nav>
+    
+    <div class="content">
+        <h2>Description</h2>
+        <p id="element-description"></p>
+        
+        <h2>Example</h2>
+        <div class="example">
+            <pre style="font-weight: 500;"><code id="element-example"></code></pre>
+        </div>
+        
+        <h2>Attributes</h2>
+        <div id="element-attributes"></div>
+        <p id="no-attributes" style="display: none; color: #999;">This element uses only global attributes.</p>
+    </div>
+    
+    <footer>
+        <p>Reference: MDN Web Docs</p>
+    </footer>
+
+    <script>
+        // Syntax highlighting function for HTML
+        function syntaxHighlight(code) {
+            // First, replace literal \n with actual newlines
+            code = code.replace(/\\n/g, '\n');
+            
+            // Escape HTML entities
+            let escaped = code.replace(/&/g, '&amp;')
+                              .replace(/</g, '&lt;')
+                              .replace(/>/g, '&gt;')
+                              .replace(/"/g, '&quot;');
+            
+            // Highlight HTML comments
+            escaped = escaped.replace(/(&lt;!--[\s\S]*?--&gt;)/g, '<span style="color: #5c6370; font-style: italic;">$1</span>');
+            
+            // Highlight complete HTML tags with attributes
+            escaped = escaped.replace(/(&lt;\/?)([a-zA-Z][a-zA-Z0-9]*)((?:[^&]|&(?!gt;))*?)(&gt;)/g, function(match, openBracket, tagName, inside, closeBracket) {
+                let result = '<span style="color: #abb2bf;">' + openBracket + '</span>';
+                result += '<span style="color: #e06c75; font-weight: 600;">' + tagName + '</span>';
+                
+                // Highlight attributes within the tag
+                if (inside && inside.trim()) {
+                    inside = inside.replace(/\s+([a-zA-Z][a-zA-Z0-9-]*)(=&quot;)([^&]*?)(&quot;)/g, function(m, attrName, eq, attrValue, closeQuot) {
+                        return ' <span style="color: #d19a66;">' + attrName + '</span>' + 
+                               '<span style="color: #abb2bf;">' + eq + '</span>' +
+                               '<span style="color: #98c379;">' + attrValue + '</span>' +
+                               '<span style="color: #abb2bf;">' + closeQuot + '</span>';
+                    });
+                    result += inside;
+                }
+                
+                result += '<span style="color: #abb2bf;">' + closeBracket + '</span>';
+                return result;
+            });
+            
+            return escaped;
+        }
+
+        // Get element name from URL parameter
+        const urlParams = new URLSearchParams(window.location.search);
+        const elementName = urlParams.get('element');
+        
+        if (elementName) {
+            // Load element data from JSON
+            fetch('elements-data.json')
+                .then(response => response.json())
+                .then(data => {
+                    const element = data[elementName];
+                    
+                    if (element) {
+                        // Update page title
+                        document.getElementById('page-title').textContent = `<${element.name}> Element`;
+                        
+                        // Update element name in nav
+                        document.getElementById('element-name').textContent = `<${element.name}>`;
+                        
+                        // Update description
+                        document.getElementById('element-description').innerHTML = element.description;
+                        
+                        // Update example with syntax highlighting
+                        const exampleCode = document.getElementById('element-example');
+                        exampleCode.innerHTML = syntaxHighlight(element.example);
+                        
+                        // Update attributes
+                        const attributesList = document.getElementById('element-attributes');
+                        const noAttributesMsg = document.getElementById('no-attributes');
+                        
+                        if (element.attributes && element.attributes.length > 0) {
+                            element.attributes.forEach(attr => {
+                                // Check if attr is an object with name and description
+                                if (typeof attr === 'object' && attr.name) {
+                                    const details = document.createElement('details');
+                                    
+                                    const summary = document.createElement('summary');
+                                    summary.textContent = attr.name;
+                                    
+                                    const descDiv = document.createElement('div');
+                                    descDiv.className = 'attr-content';
+                                    
+                                    const p = document.createElement('p');
+                                    p.textContent = attr.description;
+                                    descDiv.appendChild(p);
+                                    
+                                    // Add example if available
+                                    if (attr.example) {
+                                        const exampleLabel = document.createElement('strong');
+                                        exampleLabel.textContent = 'Example:';
+                                        exampleLabel.style.display = 'block';
+                                        exampleLabel.style.marginTop = '0.5rem';
+                                        exampleLabel.style.marginBottom = '0.25rem';
+                                        
+                                        const exampleCode = document.createElement('code');
+                                        exampleCode.textContent = attr.example;
+                                        exampleCode.style.display = 'block';
+                                        exampleCode.style.backgroundColor = '#f0f0f0';
+                                        exampleCode.style.padding = '0.5rem';
+                                        exampleCode.style.borderRadius = '3px';
+                                        exampleCode.style.fontSize = '0.9rem';
+                                        
+                                        descDiv.appendChild(exampleLabel);
+                                        descDiv.appendChild(exampleCode);
+                                    }
+                                    
+                                    details.appendChild(summary);
+                                    details.appendChild(descDiv);
+                                    attributesList.appendChild(details);
+                                } else {
+                                    // Fallback for old format (simple string)
+                                    const details = document.createElement('details');
+                                    const summary = document.createElement('summary');
+                                    summary.textContent = attr;
+                                    details.appendChild(summary);
+                                    attributesList.appendChild(details);
+                                }
+                            });
+                        } else {
+                            attributesList.style.display = 'none';
+                            noAttributesMsg.style.display = 'block';
+                        }
+                    } else {
+                        document.getElementById('element-name').textContent = 'Element Not Found';
+                        document.getElementById('element-description').textContent = 'The requested element does not exist.';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading element data:', error);
+                    document.getElementById('element-description').textContent = 'Error loading element data.';
+                });
+        } else {
+            document.getElementById('element-name').textContent = 'No Element Selected';
+            document.getElementById('element-description').textContent = 'Please select an element from the main page.';
+        }
+    </script>
+</body>
+</html>
